@@ -1,0 +1,342 @@
+<sdf version='1.6'>
+  <world name='default'>
+  <include>
+    <uri>model://ground_plane</uri>
+  </include>
+  <model name='quad01'>
+    <static>1</static>
+    <link name="quad01/base_link">
+      <pose frame="">0 0 1.4 0 0 0</pose>
+    </link>
+
+    <joint name="quad01/led_joint" type="fixed">
+      <parent>quad01/base_link</parent>
+      <child>led_link</child>
+    </joint>
+
+    <link name="led_link">
+    <pose>0.17 0 1.4 0 0 0</pose>
+      <inertial>
+        <mass>0.001</mass>  <!-- [kg] -->
+        <inertia>
+          <ixx>0</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0</iyy>
+          <iyz>0</iyz>
+          <izz>0</izz>
+        </inertia>
+      </inertial>
+      <visual name="led">
+        <geometry>
+          <sphere>
+            <radius>0.025</radius>
+          </sphere>
+        </geometry>
+        <transparency>0</transparency>
+        <material>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+          <specular>0 0 0 1</specular>
+          <emissive>0 1 0 1</emissive>
+        </material>
+      </visual>
+      <light name="led" type="spot">
+        <pose>0.05 0 0 0 1.57 0</pose>
+        <attenuation>
+          <range>10</range>
+          <linear>1</linear>
+          <constant>0.5</constant>
+        </attenuation>
+        <diffuse>0.5 1 1 1</diffuse>
+        <specular>1 1 1 1</specular>
+        <spot>
+          <inner_angle>0.25</inner_angle>
+          <outer_angle>0.3</outer_angle>
+          <falloff>1</falloff>
+        </spot>
+        <direction>0 -1 0</direction>
+      </light>
+    </link>
+
+
+    <plugin name='light_control' filename='libFlashLightPlugin.so'>
+      <enable>true</enable>
+      <light>
+        <id>led_link/led</id>
+        <duration>1</duration>
+        <interval>0</interval>
+        <color>0 1 0</color>
+        <enable>true</enable>
+      </light>
+    </plugin>
+
+    <joint name="quad01/base_joint" type="fixed">
+      <parent>quad01/base_link</parent>
+      <child>quad01/base_link_inertia</child>
+    </joint>
+
+    <link name="quad01/base_link_inertia">
+      <inertial>
+        <mass>0.68</mass>  <!-- [kg] -->
+        <inertia>
+          <ixx>0.007</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.007</iyy>
+          <iyz>0</iyz>
+          <izz>0.012</izz>
+        </inertia>
+      </inertial>
+      <visual name="base_link_visual">
+        <pose>-0.17 -0.17 1.4 -1.57 0 0 </pose>
+        <geometry>
+          <mesh>
+            <uri>model://rotors_description/meshes/bird01.dae</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <collision name="baselink_col">
+        <geometry>
+          <box> <!-- [m] [m] [m] -->
+            <size>0.01 0.01 0.012</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- attach multirotor_base_plugin to the base_link -->
+
+      <plugin filename="librotors_gazebo_multirotor_base_plugin.so" name="multirotor_base_plugin">
+        <linkName>quad01/base_link</linkName>
+        <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      </plugin>
+
+
+
+                            <!--Rotor joint and link-->
+    <joint name="quad01/joint_rotor_0" type="velocity">
+    <pose>0.17 0 1.5 0 0 0</pose>
+      <parent>quad01/base_link</parent>
+      <child>quad01/link_rotor_0</child>
+    </joint>
+    <link name="quad01/link_rotor_0">
+      <inertial>
+        <mass>0.009</mass>  <!-- [kg] -->
+        <inertia>
+          <ixx>0.000001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00007</iyy>
+          <iyz>0</iyz>
+          <izz>0.00007</izz>
+        </inertia>
+      </inertial>
+      <visual name="rotor_0_visual">
+        <pose>0.17 0 1.5 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://rotors_description/meshes/propeller_cw.dae</uri>
+            <scale>0.1 0.1 0.1</scale>
+          </mesh><!-- The propeller meshes have a radius of 1m -->
+        </geometry>
+      </visual>
+      <collision name="rotor0_col">
+        <geometry>
+          <cylinder>
+            <length>0.005</length>
+            <radius>0.1</radius><!-- [m] -->
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+    <plugin name="quad01_motor_model_0" filename="librotors_gazebo_motor_model.so">
+      <jointName>quad01/joint_rotor_0</jointName>
+      <linkName>quad01/link_rotor_0</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>838</maxRotVelocity>
+      <motorConstant>8.54858e-06</motorConstant>
+      <momentConstant>0.016</momentConstant>
+      <commandSubTopic>gazebo/command/motor_speed</commandSubTopic>
+      <motorNumber>0</motorNumber>
+      <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
+      <rollingMomentCoefficient>0.000001</rollingMomentCoefficient>
+      <motorSpeedPubTopic>motor_speed/0</motorSpeedPubTopic>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+    </plugin>
+
+
+    <joint name="quad01/joint_rotor_1" type="velocity">
+    <pose>0 0.17 1.5 0 0 0</pose>
+      <parent>quad01/base_link</parent>
+      <child>quad01/link_rotor_1</child>
+    </joint>
+    <link name="quad01/link_rotor_1">
+      <inertial>
+        <mass>0.009</mass>  <!-- [kg] -->
+        <inertia>
+          <ixx>0.000001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00007</iyy>
+          <iyz>0</iyz>
+          <izz>0.00007</izz>
+        </inertia>
+      </inertial>
+      <visual name="rotor_1_visual">
+        <pose>0 0.17 1.5 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://rotors_description/meshes/propeller_ccw.dae</uri>
+            <scale>0.1 0.1 0.1</scale>
+          </mesh><!-- The propeller meshes have a radius of 1m -->
+        </geometry>
+      </visual>
+      <collision name="rotor1_col">
+        <geometry>
+          <cylinder>
+            <length>0.005</length>
+            <radius>0.1</radius><!-- [m] -->
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+    <plugin name="quad01_motor_model_1" filename="librotors_gazebo_motor_model.so">
+      <jointName>quad01/joint_rotor_1</jointName>
+      <linkName>quad01/link_rotor_1</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>838</maxRotVelocity>
+      <motorConstant>8.54858e-06</motorConstant>
+      <momentConstant>0.016</momentConstant>
+      <commandSubTopic>gazebo/command/motor_speed</commandSubTopic>
+      <motorNumber>1</motorNumber>
+      <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
+      <rollingMomentCoefficient>0.000001</rollingMomentCoefficient>
+      <motorSpeedPubTopic>motor_speed/1</motorSpeedPubTopic>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+    </plugin>
+
+
+    <joint name="quad01/joint_rotor_2" type="velocity">
+    <pose>-0.17 0 1.5 0 0 0</pose>
+      <parent>quad01/base_link</parent>
+      <child>quad01/link_rotor_2</child>
+    </joint>
+    <link name="quad01/link_rotor_2">
+      <inertial>
+        <mass>0.009</mass>  <!-- [kg] -->
+        <inertia>
+          <ixx>0.000001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00007</iyy>
+          <iyz>0</iyz>
+          <izz>0.00007</izz>
+        </inertia>
+      </inertial>
+      <visual name="rotor_2_visual">
+        <pose>-0.17 0 1.5 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://rotors_description/meshes/propeller_cw.dae</uri>
+            <scale>0.1 0.1 0.1</scale>
+          </mesh><!-- The propeller meshes have a radius of 1m -->
+        </geometry>
+      </visual>
+      <collision name="rotor2_col">
+        <geometry>
+          <cylinder>
+            <length>0.005</length>
+            <radius>0.1</radius><!-- [m] -->
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+    <plugin name="quad01_motor_model_2" filename="librotors_gazebo_motor_model.so">
+      <jointName>quad01/joint_rotor_2</jointName>
+      <linkName>quad01/link_rotor_2</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>838</maxRotVelocity>
+      <motorConstant>8.54858e-06</motorConstant>
+      <momentConstant>0.016</momentConstant>
+      <commandSubTopic>gazebo/command/motor_speed</commandSubTopic>
+      <motorNumber>2</motorNumber>
+      <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
+      <rollingMomentCoefficient>0.000001</rollingMomentCoefficient>
+      <motorSpeedPubTopic>motor_speed/2</motorSpeedPubTopic>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+    </plugin>
+
+
+    <joint name="quad01/joint_rotor_3" type="velocity">
+      <pose>0 -0.17 1.5 0 0 0</pose>
+      <parent>quad01/base_link</parent>
+      <child>quad01/link_rotor_3</child>
+    </joint>
+    <link name="quad01/link_rotor_3">
+      <inertial>
+        <mass>0.009</mass>  <!-- [kg] -->
+        <inertia>
+          <ixx>0.000001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00007</iyy>
+          <iyz>0</iyz>
+          <izz>0.00007</izz>
+        </inertia>
+      </inertial>
+      <visual name="rotor_3_visual">
+        <pose>0 -0.17 1.5 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://rotors_description/meshes/propeller_ccw.dae</uri>
+            <scale>0.1 0.1 0.1</scale>
+          </mesh><!-- The propeller meshes have a radius of 1m -->
+        </geometry>
+      </visual>
+      <collision name="rotor3_col">
+        <geometry>
+          <cylinder>
+            <length>0.005</length>
+            <radius>0.1</radius>
+          </cylinder><!-- [m] -->
+        </geometry>
+      </collision>
+    </link>
+    <plugin name="quad01_motor_model_3" filename="librotors_gazebo_motor_model.so">
+      <jointName>quad01/joint_rotor_3</jointName>
+      <linkName>quad01/link_rotor_3</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>838</maxRotVelocity>
+      <motorConstant>8.54858e-06</motorConstant>
+      <momentConstant>0.016</momentConstant>
+      <commandSubTopic>gazebo/command/motor_speed</commandSubTopic>
+      <motorNumber>3</motorNumber>
+      <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
+      <rollingMomentCoefficient>0.000001</rollingMomentCoefficient>
+      <motorSpeedPubTopic>motor_speed/3</motorSpeedPubTopic>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+    </plugin>
+
+
+<!--    <plugin name="controller_interface" filename="librotors_gazebo_controller_interface.so">-->
+<!--      <commandAttitudeThrustSubTopic>command/attitude</commandAttitudeThrustSubTopic>-->
+<!--      <commandRateThrustSubTopic>command/rate</commandRateThrustSubTopic>-->
+<!--      <commandMotorSpeedSubTopic>command/motor_speed</commandMotorSpeedSubTopic>-->
+<!--      <imuSubTopic>imu</imuSubTopic>-->
+<!--      <motorSpeedCommandPubTopic>gazebo/command/motor_speed</motorSpeedCommandPubTopic>-->
+<!--    </plugin>-->
+
+  </model>
+  </world>
+</sdf>
