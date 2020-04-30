@@ -1,17 +1,18 @@
 //
-// Created by ljy on 19-4-22.
+// Created by ljy on 19-4-22. adapted by wzy on 20-4-10
 //
 
 #include <fstream>
+#include <chrono>
 #include "complx_tracker.h"
-
+#define PI (3.1415926535897932346f)
 #define DEBUG_SHOW_IMG
 #define OUTPUT_ARTICLE_IMAGE false
 
 using namespace std;
 using namespace cv;
 
-pointsDetector::pointsDetector() {
+void complx_tracker::pointsDetector() {
     if (algo == "MOG2")
         pBackSub = createBackgroundSubtractorMOG2(500, 16, false); //500 400 false
     else if (algo == "KNN")
@@ -19,61 +20,63 @@ pointsDetector::pointsDetector() {
     else if (algo == "MOG")
         pBackSub = bgsegm::createBackgroundSubtractorMOG(500, 10, 0.7, 0);
 
-    imgRec.push_back(Mat::zeros(img.size(),img.type()));
-    imgRec.push_back(Mat::zeros(img.size(),img.type()));
-    imgRec.push_back(Mat::zeros(img.size(),img.type()));
-    imgRec.push_back(Mat::zeros(img.size(),img.type()));
-    imgRec.push_back(Mat::zeros(img.size(),img.type()));
+//    imgRec.push_back(Mat::zeros(img.size(),img.type()));
+//    imgRec.push_back(Mat::zeros(img.size(),img.type()));
+//    imgRec.push_back(Mat::zeros(img.size(),img.type()));
+//    imgRec.push_back(Mat::zeros(img.size(),img.type()));
+//    imgRec.push_back(Mat::zeros(img.size(),img.type()));
 
 }
 
 
-bool pointsDetector::updateFrame(const cv::Mat &frame, bool using_points_position_guess) {
+bool complx_tracker::updateFrame(const cv::Mat &frame, bool using_points_position_guess) {
     if (frame.empty()) {
         ROS_INFO("pointsDetector: Can't get frame.");
         return false;
     }
-    img = frame;
+    update_img = frame;
 
-    if(OUTPUT_ARTICLE_IMAGE)
-    {
-        imgRec[0] = img;
-        imgRec[1] = valueImg;
-    }
+//    if(OUTPUT_ARTICLE_IMAGE)
+//    {
+//        imgRec[0] = img;
+//        imgRec[1] = valueImg;
+//    }
 
     if(!using_points_position_guess)
     {
         //! [apply]
         //update the background model
-        pBackSub->apply(img, fgMask);
+        pBackSub->apply(update_img, fgMask);
         //! [apply]
         frame_masked = Mat::zeros(frame.size(), frame.type());
-        img.copyTo(frame_masked, fgMask);
-        if(OUTPUT_ARTICLE_IMAGE) {
-            imgRec[2] = frame_masked;
-        }
+        update_img.copyTo(frame_masked, fgMask);
+//        if(OUTPUT_ARTICLE_IMAGE) {
+//            imgRec[2] = frame_masked;
+//        }
 
     } else{
 
 
         frame_masked = Mat::zeros(frame.size(), frame.type());
-        img.copyTo(frame_masked);
-        if(OUTPUT_ARTICLE_IMAGE) {
-            //!for imgRec
-            //! [apply]
-            //update the background model
-            pBackSub->apply(img, fgMask);
-            //! [apply]
-            imgRec[2] = Mat::zeros(valueImg.size(), valueImg.type());
-            valueImg.copyTo(imgRec[2], fgMask);
-        }
+        update_img.copyTo(frame_masked);
+//        if(OUTPUT_ARTICLE_IMAGE) {
+//            //!for imgRec
+//            //! [apply]
+//            //update the background model
+//            pBackSub->apply(img, fgMask);
+//            //! [apply]
+//            imgRec[2] = Mat::zeros(valueImg.size(), valueImg.type());
+//            valueImg.copyTo(imgRec[2], fgMask);
+//        }
     }
 }
 
 
-int pointsDetector::getPoints(const Mat &frame, cv::Point2f &BlueoutputPoint,cv::Point2f &GreenoutputPoint,
+int complx_tracker::getPoints(const Mat &frame, cv::Point2f &BlueoutputPoint,cv::Point2f &GreenoutputPoint,
         cv::Point2f &RedoutputPoint,cv::Point2f &WhiteoutputPoint, bool using_points_position_guess) {
     //! the first three images used to initiate backgroundSubtraction
+    //!remove update function
+    /*
     if(count < 3)
     {
         if(!using_points_position_guess)
@@ -84,20 +87,25 @@ int pointsDetector::getPoints(const Mat &frame, cv::Point2f &BlueoutputPoint,cv:
         return 1;
     }
     else
-    {
-        updateFrame(frame,false);
+    {*/
+        chrono::time_point<chrono::steady_clock> begin_time_1 = chrono::steady_clock::now();
+//        updateFrame(frame,false);
+        updateFrame(frame,true);
+        chrono::time_point<chrono::steady_clock> medium_1_time_1 = chrono::steady_clock::now();
         ROS_INFO("find contours");
         ////opencv read image in B G R channel
         vector<Mat> channels;
         split(frame_masked,channels);
+
+
         BlueImg = channels.at(0);
         GreenImg = channels.at(1);
         RedImg = channels.at(2);
-
+        chrono::time_point<chrono::steady_clock> medium_2_time_1 = chrono::steady_clock::now();
         threshold(BlueImg, BbinImg, 200, 255, THRESH_BINARY);
         threshold(GreenImg, GbinImg, 200, 255, THRESH_BINARY);
         threshold(RedImg, RbinImg, 200, 255, THRESH_BINARY);
-
+        chrono::time_point<chrono::steady_clock> medium_3_time_1 = chrono::steady_clock::now();
 
         int structElementSize = 1;
         //!erode
@@ -112,7 +120,7 @@ int pointsDetector::getPoints(const Mat &frame, cv::Point2f &BlueoutputPoint,cv:
         dilate(BerodedImg, BdilatedImg, dilatestructElement);
         dilate(GerodedImg, GdilatedImg, dilatestructElement);
         dilate(RerodedImg, RdilatedImg, dilatestructElement);
-
+        chrono::time_point<chrono::steady_clock> medium_4_time_1 = chrono::steady_clock::now();
         ////find contours
         findContours(BdilatedImg, contours_org_BW, RETR_CCOMP, CHAIN_APPROX_NONE);
         findContours(GdilatedImg, contours_org_GW, RETR_CCOMP, CHAIN_APPROX_NONE);
@@ -120,13 +128,20 @@ int pointsDetector::getPoints(const Mat &frame, cv::Point2f &BlueoutputPoint,cv:
         cout << "contours_org_BW.size()" << contours_org_BW.size() << endl;
         cout << "contours_org_GW.size()" << contours_org_GW.size() << endl;
         cout << "contours_org_RW.size()" << contours_org_RW.size() << endl;
-        ////calculate center of blue, green, red and white
 
+        chrono::time_point<chrono::steady_clock> end_time_1 = chrono::steady_clock::now();
+        cout <<"time 1 consume: "<< chrono::duration_cast<chrono::milliseconds>(medium_1_time_1 - begin_time_1).count() <<
+        " + "<< chrono::duration_cast<chrono::milliseconds>(medium_2_time_1 - medium_1_time_1).count() <<
+        " + "<< chrono::duration_cast<chrono::milliseconds>(medium_3_time_1 - medium_2_time_1).count() <<
+        " + "<< chrono::duration_cast<chrono::milliseconds>(medium_4_time_1 - medium_3_time_1).count() <<
+        " + "<< chrono::duration_cast<chrono::milliseconds>(end_time_1 - medium_4_time_1).count() << endl;
+        ////calculate center of blue, green, red and white
         ROS_INFO("calculate center of blue, green, red and white");
 
         BMomentCenters.clear();GMomentCenters.clear();RMomentCenters.clear();
         if(contours_org_BW.size() == 2 && contours_org_GW.size() == 2 && contours_org_RW.size() == 2)
-        {   ROS_INFO("each contours has two element");
+        {   chrono::time_point<chrono::steady_clock> begin_time_2 = chrono::steady_clock::now();
+            ROS_INFO("each contours has two element");
             for (auto itContours = contours_org_BW.begin(); itContours != contours_org_BW.end() ; itContours++) {
                 Moments m;
                 m = moments(*itContours,true);
@@ -154,19 +169,19 @@ int pointsDetector::getPoints(const Mat &frame, cv::Point2f &BlueoutputPoint,cv:
                     {    ////figure out which is white marker and blue marker
                         if(i==0)
                         {
-                            drone_0.white_p = BMomentCenters[0];
-                            drone_0.blue_p = BMomentCenters[1];
+                            WhiteoutputPoint = BMomentCenters[0];
+                            BlueoutputPoint = BMomentCenters[1];
                         }
                         if (i==1)
                         {
-                            drone_0.white_p = BMomentCenters[1];
-                            drone_0.blue_p = BMomentCenters[0];
+                            WhiteoutputPoint = BMomentCenters[1];
+                            BlueoutputPoint = BMomentCenters[0];
                         }
                         //figure out green marker
                         if(j==0)
-                            drone_0.green_p = GMomentCenters[1];
+                            GreenoutputPoint = GMomentCenters[1];
                         if(j==1)
-                            drone_0.green_p = GMomentCenters[0];
+                            GreenoutputPoint = GMomentCenters[0];
                     }
 
 
@@ -178,18 +193,15 @@ int pointsDetector::getPoints(const Mat &frame, cv::Point2f &BlueoutputPoint,cv:
                     if(error < error_min)
                     {
                         if(k==0)
-                            drone_0.red_p = RMomentCenters[1];
+                            RedoutputPoint = RMomentCenters[1];
                         if(k==1)
-                            drone_0.red_p = RMomentCenters[0];
+                            RedoutputPoint = RMomentCenters[0];
                     }
                 }
             }
-            BlueoutputPoint=drone_0.blue_p;
-            GreenoutputPoint=drone_0.green_p;
-            RedoutputPoint=drone_0.red_p;
-            WhiteoutputPoint=drone_0.white_p;
 
-
+            chrono::time_point<chrono::steady_clock> end_time_2 = chrono::steady_clock::now();
+            cout <<"time 2 consume: "<< chrono::duration_cast<chrono::milliseconds>(end_time_2 - begin_time_2).count() << endl;
 //            cv::destroyWindow("marker");
         }
         else
@@ -200,10 +212,12 @@ int pointsDetector::getPoints(const Mat &frame, cv::Point2f &BlueoutputPoint,cv:
         }
 
         return 2;
-    }
+    //!remove update function
+    /*}*/
 
 }
 
+/*
 bool pointsDetector::prefollowPoints(const Mat & frame)
 {
     updateFrame(frame,true);
@@ -216,7 +230,6 @@ bool pointsDetector::prefollowPoints(const Mat & frame)
     RedImg = channels.at(2);
 
 }
-
 
 bool pointsFollower::followPoints(const cv::Mat &frame, std::vector<cv::Point2f> &outputPointsVector) {
     binImg = frame;
@@ -282,23 +295,24 @@ bool pointsFollower::followPoints(const cv::Mat &frame, std::vector<cv::Point2f>
         return false;
     }
 }
+*/
 
 complx_tracker::complx_tracker() {
     cameraMatrix = cv::Mat::zeros(3, 3, CV_64F);
     distCoeffs = std::vector<double>{0.0, -0.0, -0.0, 0.0, 0};
-    cameraMatrix.at<double>(0, 0) = 1206.89;
-    cameraMatrix.at<double>(0, 2) = 960;
-    cameraMatrix.at<double>(1, 1) = 678.88;
-    cameraMatrix.at<double>(1, 2) = 540;
+    cameraMatrix.at<double>(0, 0) = 1206.89;//1206.89
+    cameraMatrix.at<double>(0, 2) = 960;//960
+    cameraMatrix.at<double>(1, 1) = 678.88;//I have change from 678.88 to 1206.89
+    cameraMatrix.at<double>(1, 2) = 540;//540
     cameraMatrix.at<double>(2, 2) = 1;
 
 //    start_time = ros::Time::now();
 
     if (STRUCTURE_INDEX == 0) {
-        objectPts.emplace_back(0, 0.165, -0.05);
-        objectPts.emplace_back(-0.165, 0, -0.05);
-        objectPts.emplace_back(0.165, 0, -0.05);
-        objectPts.emplace_back(0, -0.165, -0.05);
+        objectPts.emplace_back(0, 0.165, 0.05);
+        objectPts.emplace_back(-0.165, 0, 0.05);
+        objectPts.emplace_back(0.165, 0, 0.05);
+        objectPts.emplace_back(0, -0.165, 0.05);
     } else if (STRUCTURE_INDEX == 1) {
         objectPts.emplace_back(0.01, 0.0925, 0);
         objectPts.emplace_back(0.01, -0.0925, 0);
@@ -317,10 +331,10 @@ complx_tracker::complx_tracker() {
 
     std::string pkg_path = ros::package::getPath("drone_pose");
 
-
+    /*
     Matx44d trans_cam;
     ifstream mtx;
-    mtx.open(pkg_path + "/data/transformation_matrix.txt");
+    mtx.open(pkg_path + "/data/camera_identity.txt");
     if (mtx.is_open()) {
         mtx >> trans_cam.val[0] >> trans_cam.val[1] >> trans_cam.val[2] >> trans_cam.val[3]
             >> trans_cam.val[4] >> trans_cam.val[5] >> trans_cam.val[6] >> trans_cam.val[7]
@@ -330,6 +344,36 @@ complx_tracker::complx_tracker() {
     } else
         ROS_ERROR("Can't read matrix file.");
     camPose = Affine3d(trans_cam);
+    */
+
+    //! only for transform matrix
+    ifstream rota_cam_txt;
+    rota_cam_txt.open(pkg_path + "/data/camera_rotation.txt");
+    if (rota_cam_txt.is_open()) {
+        rota_cam_txt >> transform_cam.data()[0] >> transform_cam.data()[1] >> transform_cam.data()[2] >> transform_cam.data()[3]
+            >> transform_cam.data()[4] >> transform_cam.data()[5] >> transform_cam.data()[6] >> transform_cam.data()[7]
+            >> transform_cam.data()[8] >> transform_cam.data()[9] >> transform_cam.data()[10] >> transform_cam.data()[11]
+            >> transform_cam.data()[12] >> transform_cam.data()[13] >> transform_cam.data()[14] >> transform_cam.data()[15];
+        rota_cam_txt.close();
+    } else
+        ROS_ERROR("Can't read matrix file.");
+    //! camera image coordinate to ugv coordinate
+    camera2ugv_transform << 0,0,1,
+                            -1,0,0,
+                            0,-1,0;
+
+    //!eulerAngle to rotation_matrix
+    Eigen::Vector3d euler_angles(0,-0.4,0);
+    Eigen::Matrix3d rotation_matrix;
+    rotation_matrix = Eigen::AngleAxisd(euler_angles[0],Eigen::Vector3d::UnitZ()) *
+                       Eigen::AngleAxisd(euler_angles[1],Eigen::Vector3d::UnitY()) *
+                       Eigen::AngleAxisd(euler_angles[2],Eigen::Vector3d::UnitX());
+    //!tramsform matrix
+    transform_cam = Eigen::Isometry3d::Identity();
+    transform_cam.rotate(rotation_matrix);
+    transform_cam.pretranslate(Eigen::Vector3d(0,0,0));
+
+
 //
 //    following_flag = false;
 //    myWindow = viz::Viz3d("Coordinate Frame");
@@ -347,7 +391,7 @@ complx_tracker::complx_tracker() {
 
 bool complx_tracker::findImgPts() {
 //    if (!following_flag) {
-        firstStage = pts_detector.getPoints(img, BimgPts,GimgPts,RimgPts,WimgPts);
+        firstStage = getPoints(img, BimgPts,GimgPts,RimgPts,WimgPts, true);
         if (firstStage == 1){
             ROS_INFO("pts_detect 1st stage");
             return true;
@@ -420,7 +464,7 @@ bool complx_tracker::findImgPts() {
 //    }
 }
 
-bool complx_tracker::apply(const cv::Mat &frame, cv::Mat &img_to_show, cv::Affine3d &pose_world, cv::Affine3d &pose_raw) {
+bool complx_tracker::apply(const cv::Mat &frame, cv::Mat &img_to_show, Eigen::Isometry3d &pose_world, cv::Affine3d &pose_raw) {
     undistort(frame, img, cameraMatrix, distCoeffs);
     ROS_INFO("apply!");
     followImgPtsSuccess = findImgPts();
@@ -433,9 +477,55 @@ bool complx_tracker::apply(const cv::Mat &frame, cv::Mat &img_to_show, cv::Affin
 //    waitKey(0);
     if(enablePnP){
     solvePnP(objectPts, imgPts, cameraMatrix, distCoeffs, outputRvecRaw, outputTvecRaw);
-    pose = Affine3d(outputRvecRaw, outputTvecRaw);
-    worldPose = pose.concatenate(camPose);
-    pose_world = worldPose;
+
+    //!pose matrix
+    pose = Affine3d(outputRvecRaw,outputTvecRaw);
+    cout << "pose.matrix: " << pose.matrix << endl;
+    cout << "pose_rvec: " << pose.rvec()[0] << pose.rvec()[1] << pose.rvec()[2] << endl;
+    cout << "outputRvecRaw: " << outputRvecRaw[0] << outputRvecRaw[1] << outputRvecRaw[2] << endl;
+//    pose.rotate(outputRvecRaw);// not convert to gazebo coordinate
+    Eigen::Matrix<double, 3, 1> output_tvec;
+    Eigen::Matrix<double, 3, 1> output_rvec;
+
+    output_tvec.data()[0] = outputTvecRaw.val[0];
+    output_tvec.data()[1] = outputTvecRaw.val[1];
+    output_tvec.data()[2] = outputTvecRaw.val[2];
+    output_rvec.data()[0] = outputRvecRaw.val[0];
+    output_rvec.data()[1] = outputRvecRaw.val[1];
+    output_rvec.data()[2] = outputRvecRaw.val[2];
+//    cout << "camera2ugv_transform: " << camera2ugv_transform << endl;
+    tvec = camera2ugv_transform * output_tvec;
+    rvec = camera2ugv_transform * output_rvec;
+
+//    tvec.data()[0] = outputTvecRaw.val[2];//X = z
+//    tvec.data()[1] = - outputTvecRaw.val[0];//Y = -x
+//    tvec.data()[2] = - outputTvecRaw.val[1];//Z = -y
+
+//    cout << "transform_cam:" << endl <<transform_cam.matrix() << endl;
+//    cout << "transform_cam.rotation(): " << transform_cam.rotation() << endl;
+    //!convert to gazebo coordinate
+//    worldPose = pose.concatenate(camPose);
+    worldtvec = transform_cam.rotation() * tvec;
+    worldrvec = transform_cam.rotation() * rvec;
+
+//    cout << "rvec.matrix(): " << rvec.matrix() << endl;
+//    cout << "worldrvec.matrix(): " << worldrvec.matrix() << endl;
+
+    world_Affine_pose = Affine3d(Vec3d(worldrvec.data()[0],worldrvec.data()[1],worldrvec.data()[2]),
+                                 Vec3d(worldtvec.data()[0],worldtvec.data()[1],worldtvec.data()[2]));
+    cout << "world_Affine_pose: " << world_Affine_pose.matrix << endl;
+    world_rMatrix << world_Affine_pose.rotation()(0,0),world_Affine_pose.rotation()(0,1),world_Affine_pose.rotation()(0,2),
+                    world_Affine_pose.rotation()(1,0),world_Affine_pose.rotation()(1,1),world_Affine_pose.rotation()(1,2),
+                    world_Affine_pose.rotation()(2,0),world_Affine_pose.rotation()(2,1),world_Affine_pose.rotation()(2,2);
+    cout << "world_rMatrix: " << world_rMatrix.matrix() << endl;
+
+    cout << "outputTvecRaw: "<<outputTvecRaw.val[0] << outputTvecRaw.val[1] << outputTvecRaw.val[2] << endl;
+    cout << "tvec: "<<tvec.data()[0] << tvec.data()[1] << tvec.data()[2] << endl;
+    cout << "worldtvec: "<<worldtvec.data()[0] <<"  "<< worldtvec.data()[1] <<"  "<< worldtvec.data()[2] << endl;
+    pose_world = Eigen::Isometry3d::Identity();
+    pose_world.prerotate(world_rMatrix);
+    pose_world.pretranslate(worldtvec);
+    cout << "poseworld: " << pose_world.matrix() << endl;
     pose_raw = pose;
     }
 //

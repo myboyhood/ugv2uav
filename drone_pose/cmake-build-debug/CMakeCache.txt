@@ -332,6 +332,9 @@ ENSENSO_INCLUDE_DIR:PATH=ENSENSO_INCLUDE_DIR-NOTFOUND
 //Path to a library.
 ENSENSO_LIBRARY:FILEPATH=ENSENSO_LIBRARY-NOTFOUND
 
+//The directory containing a CMake configuration file for Eigen3.
+Eigen3_DIR:PATH=/usr/lib/cmake/eigen3
+
 //Path to a file.
 FLANN_INCLUDE_DIRS:PATH=/usr/include
 
@@ -685,6 +688,9 @@ drone_pose_BINARY_DIR:STATIC=/home/wzy/catkin_ws/src/drone_pose/cmake-build-debu
 
 //Value Computed by CMake
 drone_pose_SOURCE_DIR:STATIC=/home/wzy/catkin_ws/src/drone_pose
+
+//The directory containing a CMake configuration file for eigen.
+eigen_DIR:PATH=eigen_DIR-NOTFOUND
 
 //The directory containing a CMake configuration file for gencpp.
 gencpp_DIR:PATH=/opt/ros/melodic/share/gencpp/cmake

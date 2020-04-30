@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/wzy/catkin_ws/src/drone_pose/src/UGV.cpp" "/home/wzy/catkin_ws/src/drone_pose/cmake-build-debug/CMakeFiles/drone_pose_node.dir/src/UGV.cpp.o"
   "/home/wzy/catkin_ws/src/drone_pose/src/complx_tracker.cpp" "/home/wzy/catkin_ws/src/drone_pose/cmake-build-debug/CMakeFiles/drone_pose_node.dir/src/complx_tracker.cpp.o"
   "/home/wzy/catkin_ws/src/drone_pose/src/drone_pose_node.cpp" "/home/wzy/catkin_ws/src/drone_pose/cmake-build-debug/CMakeFiles/drone_pose_node.dir/src/drone_pose_node.cpp.o"
   )

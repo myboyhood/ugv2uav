@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/drone_pose_node.dir/src/UGV.cpp.o"
   "CMakeFiles/drone_pose_node.dir/src/complx_tracker.cpp.o"
   "CMakeFiles/drone_pose_node.dir/src/drone_pose_node.cpp.o"
   "devel/lib/drone_pose/drone_pose_node"

@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 2.8.3)
 project(drone_pose)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
-# add_compile_options(-std=c++11)
+add_compile_options(-std=c++11)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -24,6 +24,7 @@ find_package(catkin REQUIRED COMPONENTS
 # find_package(Boost REQUIRED COMPONENTS system)
 find_package(OpenCV REQUIRED)
 find_package(PCL REQUIRED)
+find_package(Eigen3 REQUIRED)
 
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed
@@ -127,6 +128,7 @@ include_directories(
   include
   ${catkin_INCLUDE_DIRS}
   ${PCL_INCLUDE_DIRS}
+  ${EIGEN3_INCLUDE_DIR}
 )
 
 ## Declare a C++ library
@@ -136,13 +138,16 @@ include_directories(
 add_executable(drone_pose_node
   src/drone_pose_node.cpp
   src/complx_tracker.cpp
-)
+  src/UGV.cpp)
 add_dependencies(drone_pose_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(drone_pose_node
   ${catkin_LIBRARIES}
    ${OpenCV_LIBS}
 )
 
+add_executable(Eigen_fun_node  src/Eigen_fun.cpp)
+target_link_libraries(Eigen_fun_node
+        ${catkin_LIBRARIES}${Eigen3_LIBS})
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
 ## either from message generation or dynamic reconfigure

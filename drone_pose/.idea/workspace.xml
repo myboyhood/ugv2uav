@@ -2,61 +2,62 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="drone_pose" targetName="rosgraph_msgs_generate_messages_lisp" />
-      <config projectName="drone_pose" targetName="roscpp_generate_messages_cpp" />
-      <config projectName="drone_pose" targetName="sensor_msgs_generate_messages_lisp" />
-      <config projectName="drone_pose" targetName="tf2_msgs_generate_messages_nodejs" />
-      <config projectName="drone_pose" targetName="actionlib_generate_messages_eus" />
-      <config projectName="drone_pose" targetName="tests" />
-      <config projectName="drone_pose" targetName="tf2_msgs_generate_messages_eus" />
-      <config projectName="drone_pose" targetName="roscpp_generate_messages_lisp" />
-      <config projectName="drone_pose" targetName="std_msgs_generate_messages_eus" />
-      <config projectName="drone_pose" targetName="geometry_msgs_generate_messages_py" />
-      <config projectName="drone_pose" targetName="geometry_msgs_generate_messages_eus" />
-      <config projectName="drone_pose" targetName="tf_generate_messages_cpp" />
-      <config projectName="drone_pose" targetName="std_msgs_generate_messages_py" />
-      <config projectName="drone_pose" targetName="sensor_msgs_generate_messages_cpp" />
-      <config projectName="drone_pose" targetName="rosgraph_msgs_generate_messages_nodejs" />
-      <config projectName="drone_pose" targetName="rosgraph_msgs_generate_messages_cpp" />
-      <config projectName="drone_pose" targetName="tf_generate_messages_lisp" />
-      <config projectName="drone_pose" targetName="tf_generate_messages_py" />
-      <config projectName="drone_pose" targetName="tf_generate_messages_nodejs" />
-      <config projectName="drone_pose" targetName="gmock" />
-      <config projectName="drone_pose" targetName="std_msgs_generate_messages_nodejs" />
-      <config projectName="drone_pose" targetName="actionlib_generate_messages_cpp" />
-      <config projectName="drone_pose" targetName="download_extra_data" />
-      <config projectName="drone_pose" targetName="roscpp_generate_messages_py" />
-      <config projectName="drone_pose" targetName="tf2_msgs_generate_messages_cpp" />
-      <config projectName="drone_pose" targetName="drone_pose_node" />
       <config projectName="drone_pose" targetName="std_msgs_generate_messages_cpp" />
-      <config projectName="drone_pose" targetName="roscpp_generate_messages_eus" />
-      <config projectName="drone_pose" targetName="geometry_msgs_generate_messages_cpp" />
-      <config projectName="drone_pose" targetName="std_msgs_generate_messages_lisp" />
-      <config projectName="drone_pose" targetName="tf2_msgs_generate_messages_py" />
-      <config projectName="drone_pose" targetName="actionlib_msgs_generate_messages_eus" />
-      <config projectName="drone_pose" targetName="gmock_main" />
-      <config projectName="drone_pose" targetName="gtest_main" />
-      <config projectName="drone_pose" targetName="sensor_msgs_generate_messages_py" />
+      <config projectName="drone_pose" targetName="std_msgs_generate_messages_nodejs" />
       <config projectName="drone_pose" targetName="sensor_msgs_generate_messages_nodejs" />
-      <config projectName="drone_pose" targetName="actionlib_generate_messages_nodejs" />
-      <config projectName="drone_pose" targetName="tf2_msgs_generate_messages_lisp" />
-      <config projectName="drone_pose" targetName="actionlib_msgs_generate_messages_lisp" />
-      <config projectName="drone_pose" targetName="actionlib_generate_messages_py" />
-      <config projectName="drone_pose" targetName="doxygen" />
-      <config projectName="drone_pose" targetName="actionlib_generate_messages_lisp" />
-      <config projectName="drone_pose" targetName="actionlib_msgs_generate_messages_nodejs" />
+      <config projectName="drone_pose" targetName="gtest" />
+      <config projectName="drone_pose" targetName="roscpp_generate_messages_eus" />
+      <config projectName="drone_pose" targetName="clean_test_results" />
+      <config projectName="drone_pose" targetName="geometry_msgs_generate_messages_cpp" />
+      <config projectName="drone_pose" targetName="roscpp_generate_messages_py" />
+      <config projectName="drone_pose" targetName="sensor_msgs_generate_messages_py" />
+      <config projectName="drone_pose" targetName="rosgraph_msgs_generate_messages_lisp" />
       <config projectName="drone_pose" targetName="tf_generate_messages_eus" />
+      <config projectName="drone_pose" targetName="tests" />
+      <config projectName="drone_pose" targetName="geometry_msgs_generate_messages_lisp" />
+      <config projectName="drone_pose" targetName="drone_pose_node" />
+      <config projectName="drone_pose" targetName="tf2_msgs_generate_messages_cpp" />
+      <config projectName="drone_pose" targetName="gtest_main" />
+      <config projectName="drone_pose" targetName="actionlib_msgs_generate_messages_lisp" />
+      <config projectName="drone_pose" targetName="std_msgs_generate_messages_eus" />
+      <config projectName="drone_pose" targetName="tf2_msgs_generate_messages_lisp" />
+      <config projectName="drone_pose" targetName="actionlib_msgs_generate_messages_eus" />
+      <config projectName="drone_pose" targetName="roscpp_generate_messages_nodejs" />
+      <config projectName="drone_pose" targetName="sensor_msgs_generate_messages_lisp" />
+      <config projectName="drone_pose" targetName="rosgraph_msgs_generate_messages_nodejs" />
+      <config projectName="drone_pose" targetName="actionlib_generate_messages_py" />
+      <config projectName="drone_pose" targetName="tf2_msgs_generate_messages_nodejs" />
+      <config projectName="drone_pose" targetName="std_msgs_generate_messages_py" />
+      <config projectName="drone_pose" targetName="actionlib_generate_messages_eus" />
+      <config projectName="drone_pose" targetName="tf_generate_messages_cpp" />
+      <config projectName="drone_pose" targetName="Eigen_fun_node" />
+      <config projectName="drone_pose" targetName="actionlib_generate_messages_nodejs" />
+      <config projectName="drone_pose" targetName="tf2_msgs_generate_messages_eus" />
+      <config projectName="drone_pose" targetName="gmock" />
+      <config projectName="drone_pose" targetName="actionlib_msgs_generate_messages_cpp" />
+      <config projectName="drone_pose" targetName="rosgraph_msgs_generate_messages_eus" />
+      <config projectName="drone_pose" targetName="gmock_main" />
+      <config projectName="drone_pose" targetName="rosgraph_msgs_generate_messages_py" />
+      <config projectName="drone_pose" targetName="sensor_msgs_generate_messages_eus" />
+      <config projectName="drone_pose" targetName="actionlib_msgs_generate_messages_nodejs" />
+      <config projectName="drone_pose" targetName="download_extra_data" />
+      <config projectName="drone_pose" targetName="actionlib_generate_messages_cpp" />
+      <config projectName="drone_pose" targetName="run_tests" />
+      <config projectName="drone_pose" targetName="tf2_msgs_generate_messages_py" />
+      <config projectName="drone_pose" targetName="doxygen" />
       <config projectName="drone_pose" targetName="actionlib_msgs_generate_messages_py" />
       <config projectName="drone_pose" targetName="geometry_msgs_generate_messages_nodejs" />
-      <config projectName="drone_pose" targetName="run_tests" />
-      <config projectName="drone_pose" targetName="rosgraph_msgs_generate_messages_py" />
-      <config projectName="drone_pose" targetName="gtest" />
-      <config projectName="drone_pose" targetName="actionlib_msgs_generate_messages_cpp" />
-      <config projectName="drone_pose" targetName="sensor_msgs_generate_messages_eus" />
-      <config projectName="drone_pose" targetName="roscpp_generate_messages_nodejs" />
-      <config projectName="drone_pose" targetName="geometry_msgs_generate_messages_lisp" />
-      <config projectName="drone_pose" targetName="clean_test_results" />
-      <config projectName="drone_pose" targetName="rosgraph_msgs_generate_messages_eus" />
+      <config projectName="drone_pose" targetName="geometry_msgs_generate_messages_py" />
+      <config projectName="drone_pose" targetName="actionlib_generate_messages_lisp" />
+      <config projectName="drone_pose" targetName="std_msgs_generate_messages_lisp" />
+      <config projectName="drone_pose" targetName="tf_generate_messages_nodejs" />
+      <config projectName="drone_pose" targetName="rosgraph_msgs_generate_messages_cpp" />
+      <config projectName="drone_pose" targetName="tf_generate_messages_py" />
+      <config projectName="drone_pose" targetName="roscpp_generate_messages_cpp" />
+      <config projectName="drone_pose" targetName="geometry_msgs_generate_messages_eus" />
+      <config projectName="drone_pose" targetName="sensor_msgs_generate_messages_cpp" />
+      <config projectName="drone_pose" targetName="roscpp_generate_messages_lisp" />
+      <config projectName="drone_pose" targetName="tf_generate_messages_lisp" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -84,9 +85,14 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../rotors_simulator/rotors_gazebo" />
   </component>
   <component name="RunManager" selected="CMake Application.drone_pose_node">
+    <configuration name="Eigen_fun_node" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="drone_pose" TARGET_NAME="Eigen_fun_node" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="drone_pose" RUN_TARGET_NAME="Eigen_fun_node">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="actionlib_generate_messages_cpp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="drone_pose" TARGET_NAME="actionlib_generate_messages_cpp" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -363,6 +369,7 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="CMake Application.Eigen_fun_node" />
       <item itemvalue="CMake Application.actionlib_generate_messages_cpp" />
       <item itemvalue="CMake Application.actionlib_generate_messages_eus" />
       <item itemvalue="CMake Application.actionlib_generate_messages_lisp" />
@@ -439,6 +446,12 @@
       <workItem from="1587522026167" duration="5307000" />
       <workItem from="1587544069632" duration="4711000" />
       <workItem from="1587556151753" duration="4708000" />
+      <workItem from="1587721047270" duration="2595000" />
+      <workItem from="1587772465960" duration="6047000" />
+      <workItem from="1587861392878" duration="30043000" />
+      <workItem from="1587943584583" duration="7780000" />
+      <workItem from="1588156462708" duration="14663000" />
+      <workItem from="1588201265217" duration="12549000" />
     </task>
     <servers />
   </component>
@@ -446,10 +459,14 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2056" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1587251166345">
+    <state x="2056" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1588215844287">
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>
-    <state x="2056" y="310" width="424" height="484" key="FileChooserDialogImpl/1280.0.1920.1080/0.27.1280.997@1280.0.1920.1080" timestamp="1587251166345" />
+    <state x="2056" y="310" width="424" height="484" key="FileChooserDialogImpl/1280.0.1920.1080/0.27.1280.997@1280.0.1920.1080" timestamp="1588215844287" />
+    <state x="1929" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1588201265393">
+      <screen x="1280" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1929" y="380" key="com.intellij.ide.util.TipDialog/1280.0.1920.1080/0.27.1280.997@1280.0.1920.1080" timestamp="1588201265393" />
     <state x="1936" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1587088095399">
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>

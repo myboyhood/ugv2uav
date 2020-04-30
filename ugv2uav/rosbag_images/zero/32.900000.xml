@@ -1,0 +1,26 @@
+<annotation>
+	<folder>zero</folder>
+	<filename>32.900000.png</filename>
+	<path>/home/wzy/catkin_ws/src/ugv2uav/rosbag_images/zero/32.900000.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1920</width>
+		<height>1080</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>drone</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>836</xmin>
+			<ymin>611</ymin>
+			<xmax>1048</xmax>
+			<ymax>753</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,6 +1,7 @@
 /home/wzy/catkin_ws/src/drone_pose/cmake-build-debug/CMakeFiles/install.dir
 /home/wzy/catkin_ws/src/drone_pose/cmake-build-debug/CMakeFiles/list_install_components.dir
 /home/wzy/catkin_ws/src/drone_pose/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/wzy/catkin_ws/src/drone_pose/cmake-build-debug/CMakeFiles/Eigen_fun_node.dir
 /home/wzy/catkin_ws/src/drone_pose/cmake-build-debug/CMakeFiles/drone_pose_node.dir
 /home/wzy/catkin_ws/src/drone_pose/cmake-build-debug/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir
 /home/wzy/catkin_ws/src/drone_pose/cmake-build-debug/CMakeFiles/install/strip.dir
