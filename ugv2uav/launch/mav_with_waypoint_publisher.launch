@@ -37,24 +37,43 @@
     <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
   </group>
 
-  <group ns="ugv1">
-    <param name="robot_description1" command="$(find xacro)/xacro --inorder $(find turtlebot3_description)/urdf/turtlebot3_waffle.urdf.xacro ns:=ugv1"/>
-    <node name="car1" pkg="gazebo_ros" respawn="false" type="spawn_model" args="-param robot_description1 -urdf -model ugv1 -x 0 -y 0 -z 0 -R 0 -P 0 -Y 0"/>
-  </group>
+<group ns="ugv1">
+    <include file="$(find ugv2uav)/launch/spawn_ugv.launch">
+        <arg name="ugv_name" value="ugv1"/>
+        <arg name="x" default="0.0"/>
+        <arg name="y" default="0.0"/>
+        <arg name="z" default="0.0"/>
+        <arg name="R" default="0"/>
+        <arg name="P" default="0"/>
+        <arg name="Y" default="0"/>
+    </include>
+</group>
 
   <group ns="ugv2">
-    <param name="robot_description2" command="$(find xacro)/xacro --inorder $(find turtlebot3_description)/urdf/turtlebot3_waffle.urdf.xacro ns:=ugv2"/>
-    <node name="car2" pkg="gazebo_ros" respawn="false" type="spawn_model" args="-param robot_description2 -urdf -model ugv2 -x 0 -y -3 -z 0 -R 0 -P 0 -Y 1.57"/>
+    <include file="$(find ugv2uav)/launch/spawn_ugv.launch">
+      <arg name="ugv_name" value="ugv2"/>
+      <arg name="x" default="0.0"/>
+      <arg name="y" default="-3"/>
+      <arg name="z" default="0.0"/>
+      <arg name="R" default="0"/>
+      <arg name="P" default="0"/>
+      <arg name="Y" default="0.8"/>
+    </include>
   </group>
 
-  <group ns="ugv3">
-    <param name="robot_description3" command="$(find xacro)/xacro --inorder $(find turtlebot3_description)/urdf/turtlebot3_waffle.urdf.xacro ns:=ugv3"/>
-    <node name="car3" pkg="gazebo_ros" respawn="false" type="spawn_model" args="-param robot_description3 -urdf -model ugv3 -x 6 -y 0 -z 0 -R 0 -P 0 -Y 3.14"/>
-  </group>
+<!--  <group ns="ugv2">-->
+<!--    <param name="robot_description2" command="$(find xacro)/xacro &#45;&#45;inorder $(find ugv2uav)/model/ugv/urdf/turtlebot3_waffle.urdf.xacro ns:=ugv2"/>-->
+<!--    <node name="car2" pkg="gazebo_ros" respawn="false" type="spawn_model" args="-param robot_description2 -urdf -model ugv2 -x 0 -y -3 -z 0 -R 0 -P 0 -Y 1.57"/>-->
+<!--  </group>-->
 
-  <group ns="ugv4">
-    <param name="robot_description4" command="$(find xacro)/xacro --inorder $(find turtlebot3_description)/urdf/turtlebot3_waffle.urdf.xacro ns:=ugv4"/>
-    <node name="car4" pkg="gazebo_ros" respawn="false" type="spawn_model" args="-param robot_description4 -urdf -model ugv4 -x 0 -y 3 -z 0 -R 0 -P 0 -Y -1.57"/>
-  </group>
+<!--  <group ns="ugv3">-->
+<!--    <param name="robot_description3" command="$(find xacro)/xacro &#45;&#45;inorder $(find ugv2uav)/model/ugv/urdf/turtlebot3_waffle.urdf.xacro ns:=ugv3"/>-->
+<!--    <node name="car3" pkg="gazebo_ros" respawn="false" type="spawn_model" args="-param robot_description3 -urdf -model ugv3 -x 6 -y 0 -z 0 -R 0 -P 0 -Y 3.14"/>-->
+<!--  </group>-->
+
+<!--  <group ns="ugv4">-->
+<!--    <param name="robot_description4" command="$(find xacro)/xacro &#45;&#45;inorder $(find ugv2uav)/model/ugv/urdf/turtlebot3_waffle.urdf.xacro ns:=ugv4"/>-->
+<!--    <node name="car4" pkg="gazebo_ros" respawn="false" type="spawn_model" args="-param robot_description4 -urdf -model ugv4 -x 0 -y 3 -z 0 -R 0 -P 0 -Y -1.57"/>-->
+<!--  </group>-->
 
 </launch>

@@ -1,3 +1,0 @@
-<launch>
-    <node name = "drone_pose_node" pkg = "drone_pose" type = "drone_pose_node" output="screen"/>
-</launch>

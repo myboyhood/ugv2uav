@@ -11,6 +11,11 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  urdf
+  xacro
+  controller_manager
+  joint_state_controller
+  robot_state_publisher
 )
 
 ## System dependencies are found with CMake's conventions
@@ -103,6 +108,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
+  CATKIN_DEPENDS urdf xacro
 #  INCLUDE_DIRS include
 #  LIBRARIES ugv2uav
 #  CATKIN_DEPENDS roscpp rospy std_msgs
@@ -184,7 +190,9 @@ include_directories(
 #   FILES_MATCHING PATTERN "*.h"
 #   PATTERN ".svn" EXCLUDE
 # )
-
+install(DIRECTORY model/ugv/meshes model/ugv/urdf
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)
 ## Mark other files for installation (e.g. launch and bag files, etc.)
 # install(FILES
 #   # myfile1

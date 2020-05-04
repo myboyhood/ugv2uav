@@ -143,6 +143,13 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ugv2uav" TYPE FILE FILES "/home/wzy/catkin_ws/src/ugv2uav/package.xml")
 endif()
 
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ugv2uav" TYPE DIRECTORY FILES
+    "/home/wzy/catkin_ws/src/ugv2uav/model/ugv/meshes"
+    "/home/wzy/catkin_ws/src/ugv2uav/model/ugv/urdf"
+    )
+endif()
+
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/wzy/catkin_ws/src/ugv2uav/cmake-build-debug/gtest/cmake_install.cmake")

@@ -1,2 +1,0 @@
-- setup-file:
-    local-name: /home/wzy/catkin_ws/src/drone_pose/cmake-build-debug/devel/setup.sh
