@@ -1,8 +1,0 @@
-prefix=/home/wzy/catkin_ws/src/drone_pose/cmake-build-debug/devel
-
-Name: drone_pose
-Description: Description of drone_pose
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
