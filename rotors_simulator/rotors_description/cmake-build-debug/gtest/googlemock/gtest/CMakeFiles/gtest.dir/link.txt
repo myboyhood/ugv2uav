@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC -g  -shared -Wl,-soname,libgtest.so -o libgtest.so CMakeFiles/gtest.dir/src/gtest-all.cc.o  -L/home/wzy/catkin_ws/src/rotors_simulator/rotors_description/cmake-build-debug/gtest/googlemock/gtest/src -Wl,-rpath,/home/wzy/catkin_ws/src/rotors_simulator/rotors_description/cmake-build-debug/gtest/googlemock/gtest/src -lpthread 

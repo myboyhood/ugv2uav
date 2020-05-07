@@ -1,8 +1,0 @@
-prefix=/usr/local
-
-Name: ugv2uav
-Description: Description of ugv2uav
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
