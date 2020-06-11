@@ -23,13 +23,13 @@ class ImageCreator():
 
 	def __init__(self):
 		self.bridge = CvBridge()
-       	with rosbag.Bag('/home/wzy/catkin_ws/src/ugv2uav/rosbag_images/zero.bag', 'r') as bag:  
+       	with rosbag.Bag('/home/wzy/catkin_ws/src/ugv2uav/rosbag_images/three.bag', 'r') as bag:  
             for topic,msg,t in bag.read_messages():
                 if topic == "/ugv1/camera/rgb/image_raw_L/compressed": 
 					print 'received image of type: "%s"' % msg.format
 					np_arr = np.fromstring(msg.data,np.uint8)
 					cv_image = cv2.imdecode(np_arr,cv2.IMREAD_COLOR)
-					img_file = "/home/wzy/catkin_ws/src/ugv2uav/rosbag_images/zero"
+					img_file = "/home/wzy/catkin_ws/src/ugv2uav/rosbag_images/three"
 					timestr = "%.6f" %  msg.header.stamp.to_sec()
                         
 					image_name = timestr+ ".png"

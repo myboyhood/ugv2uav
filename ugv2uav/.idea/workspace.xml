@@ -2,30 +2,100 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="ugv2uav" targetName="roscpp_generate_messages_py" />
-      <config projectName="ugv2uav" targetName="std_msgs_generate_messages_py" />
-      <config projectName="ugv2uav" targetName="clean_test_results" />
-      <config projectName="ugv2uav" targetName="roscpp_generate_messages_nodejs" />
-      <config projectName="ugv2uav" targetName="std_msgs_generate_messages_cpp" />
-      <config projectName="ugv2uav" targetName="std_msgs_generate_messages_nodejs" />
-      <config projectName="ugv2uav" targetName="gtest_main" />
-      <config projectName="ugv2uav" targetName="roscpp_generate_messages_cpp" />
       <config projectName="ugv2uav" targetName="std_msgs_generate_messages_lisp" />
-      <config projectName="ugv2uav" targetName="roscpp_generate_messages_eus" />
-      <config projectName="ugv2uav" targetName="gtest" />
-      <config projectName="ugv2uav" targetName="gmock" />
-      <config projectName="ugv2uav" targetName="std_msgs_generate_messages_eus" />
-      <config projectName="ugv2uav" targetName="rosgraph_msgs_generate_messages_eus" />
-      <config projectName="ugv2uav" targetName="rosgraph_msgs_generate_messages_py" />
-      <config projectName="ugv2uav" targetName="tests" />
-      <config projectName="ugv2uav" targetName="roscpp_generate_messages_lisp" />
-      <config projectName="ugv2uav" targetName="doxygen" />
-      <config projectName="ugv2uav" targetName="rosgraph_msgs_generate_messages_cpp" />
-      <config projectName="ugv2uav" targetName="rosgraph_msgs_generate_messages_lisp" />
-      <config projectName="ugv2uav" targetName="rosgraph_msgs_generate_messages_nodejs" />
-      <config projectName="ugv2uav" targetName="download_extra_data" />
+      <config projectName="ugv2uav" targetName="ugv2uav_genlisp" />
+      <config projectName="ugv2uav" targetName="tf2_msgs_generate_messages_lisp" />
+      <config projectName="ugv2uav" targetName="ugv2uav_gencpp" />
+      <config projectName="ugv2uav" targetName="geometry_msgs_generate_messages_nodejs" />
+      <config projectName="ugv2uav" targetName="gazebo_msgs_generate_messages_eus" />
+      <config projectName="ugv2uav" targetName="geometry_msgs_generate_messages_py" />
+      <config projectName="ugv2uav" targetName="actionlib_generate_messages_lisp" />
+      <config projectName="ugv2uav" targetName="mav_msgs_generate_messages_py" />
       <config projectName="ugv2uav" targetName="run_tests" />
+      <config projectName="ugv2uav" targetName="controller_manager_msgs_generate_messages_cpp" />
+      <config projectName="ugv2uav" targetName="mav_msgs_generate_messages_nodejs" />
+      <config projectName="ugv2uav" targetName="actionlib_generate_messages_cpp" />
       <config projectName="ugv2uav" targetName="gmock_main" />
+      <config projectName="ugv2uav" targetName="sensor_msgs_generate_messages_py" />
+      <config projectName="ugv2uav" targetName="actionlib_msgs_generate_messages_cpp" />
+      <config projectName="ugv2uav" targetName="geometry_msgs_generate_messages_cpp" />
+      <config projectName="ugv2uav" targetName="sensor_msgs_generate_messages_lisp" />
+      <config projectName="ugv2uav" targetName="ugv2uav_generate_messages_nodejs" />
+      <config projectName="ugv2uav" targetName="roscpp_generate_messages_cpp" />
+      <config projectName="ugv2uav" targetName="gtest" />
+      <config projectName="ugv2uav" targetName="std_srvs_generate_messages_eus" />
+      <config projectName="ugv2uav" targetName="roscpp_generate_messages_lisp" />
+      <config projectName="ugv2uav" targetName="clean_test_results" />
+      <config projectName="ugv2uav" targetName="ugv2uav_generate_messages_eus" />
+      <config projectName="ugv2uav" targetName="tf2_msgs_generate_messages_py" />
+      <config projectName="ugv2uav" targetName="controller_manager_msgs_generate_messages_py" />
+      <config projectName="ugv2uav" targetName="mav_msgs_generate_messages_eus" />
+      <config projectName="ugv2uav" targetName="ugv2uav_xacro_generated_to_devel_space_" />
+      <config projectName="ugv2uav" targetName="controller_manager_msgs_generate_messages_eus" />
+      <config projectName="ugv2uav" targetName="actionlib_msgs_generate_messages_py" />
+      <config projectName="ugv2uav" targetName="trajectory_msgs_generate_messages_eus" />
+      <config projectName="ugv2uav" targetName="gtest_main" />
+      <config projectName="ugv2uav" targetName="std_srvs_generate_messages_lisp" />
+      <config projectName="ugv2uav" targetName="actionlib_msgs_generate_messages_nodejs" />
+      <config projectName="ugv2uav" targetName="_ugv2uav_generate_messages_check_deps_custom_trans" />
+      <config projectName="ugv2uav" targetName="geometry_msgs_generate_messages_eus" />
+      <config projectName="ugv2uav" targetName="nav_msgs_generate_messages_nodejs" />
+      <config projectName="ugv2uav" targetName="std_srvs_generate_messages_cpp" />
+      <config projectName="ugv2uav" targetName="ugv2uav_generate_messages_cpp" />
+      <config projectName="ugv2uav" targetName="nav_msgs_generate_messages_cpp" />
+      <config projectName="ugv2uav" targetName="nav_msgs_generate_messages_lisp" />
+      <config projectName="ugv2uav" targetName="std_msgs_generate_messages_eus" />
+      <config projectName="ugv2uav" targetName="trajectory_msgs_generate_messages_nodejs" />
+      <config projectName="ugv2uav" targetName="actionlib_generate_messages_nodejs" />
+      <config projectName="ugv2uav" targetName="rosgraph_msgs_generate_messages_cpp" />
+      <config projectName="ugv2uav" targetName="mav_msgs_generate_messages_cpp" />
+      <config projectName="ugv2uav" targetName="roscpp_generate_messages_py" />
+      <config projectName="ugv2uav" targetName="trajectory_msgs_generate_messages_cpp" />
+      <config projectName="ugv2uav" targetName="std_srvs_generate_messages_nodejs" />
+      <config projectName="ugv2uav" targetName="ugv2uav_gennodejs" />
+      <config projectName="ugv2uav" targetName="tf2_msgs_generate_messages_eus" />
+      <config projectName="ugv2uav" targetName="rosgraph_msgs_generate_messages_lisp" />
+      <config projectName="ugv2uav" targetName="std_msgs_generate_messages_nodejs" />
+      <config projectName="ugv2uav" targetName="sensor_msgs_generate_messages_cpp" />
+      <config projectName="ugv2uav" targetName="sensor_msgs_generate_messages_nodejs" />
+      <config projectName="ugv2uav" targetName="rosgraph_msgs_generate_messages_py" />
+      <config projectName="ugv2uav" targetName="gazebo_msgs_generate_messages_nodejs" />
+      <config projectName="ugv2uav" targetName="nav_msgs_generate_messages_py" />
+      <config projectName="ugv2uav" targetName="trajectory_msgs_generate_messages_lisp" />
+      <config projectName="ugv2uav" targetName="eigen_ugv_trans_node" />
+      <config projectName="ugv2uav" targetName="doxygen" />
+      <config projectName="ugv2uav" targetName="nav_msgs_generate_messages_eus" />
+      <config projectName="ugv2uav" targetName="std_msgs_generate_messages_cpp" />
+      <config projectName="ugv2uav" targetName="ugv2uav_geneus" />
+      <config projectName="ugv2uav" targetName="mav_msgs_generate_messages_lisp" />
+      <config projectName="ugv2uav" targetName="gazebo_msgs_generate_messages_cpp" />
+      <config projectName="ugv2uav" targetName="gmock" />
+      <config projectName="ugv2uav" targetName="ugv2uav_generate_messages" />
+      <config projectName="ugv2uav" targetName="rosgraph_msgs_generate_messages_eus" />
+      <config projectName="ugv2uav" targetName="controller_manager_msgs_generate_messages_nodejs" />
+      <config projectName="ugv2uav" targetName="gazebo_msgs_generate_messages_lisp" />
+      <config projectName="ugv2uav" targetName="ugv2uav_genpy" />
+      <config projectName="ugv2uav" targetName="roscpp_generate_messages_nodejs" />
+      <config projectName="ugv2uav" targetName="ugv2uav_generate_messages_py" />
+      <config projectName="ugv2uav" targetName="geometry_msgs_generate_messages_lisp" />
+      <config projectName="ugv2uav" targetName="tf2_msgs_generate_messages_cpp" />
+      <config projectName="ugv2uav" targetName="download_extra_data" />
+      <config projectName="ugv2uav" targetName="tests" />
+      <config projectName="ugv2uav" targetName="drone_waypoint_publisher" />
+      <config projectName="ugv2uav" targetName="actionlib_generate_messages_eus" />
+      <config projectName="ugv2uav" targetName="sensor_msgs_generate_messages_eus" />
+      <config projectName="ugv2uav" targetName="actionlib_msgs_generate_messages_eus" />
+      <config projectName="ugv2uav" targetName="trajectory_msgs_generate_messages_py" />
+      <config projectName="ugv2uav" targetName="ugv2uav_generate_messages_lisp" />
+      <config projectName="ugv2uav" targetName="gazebo_msgs_generate_messages_py" />
+      <config projectName="ugv2uav" targetName="tf2_msgs_generate_messages_nodejs" />
+      <config projectName="ugv2uav" targetName="rosgraph_msgs_generate_messages_nodejs" />
+      <config projectName="ugv2uav" targetName="actionlib_msgs_generate_messages_lisp" />
+      <config projectName="ugv2uav" targetName="roscpp_generate_messages_eus" />
+      <config projectName="ugv2uav" targetName="actionlib_generate_messages_py" />
+      <config projectName="ugv2uav" targetName="controller_manager_msgs_generate_messages_lisp" />
+      <config projectName="ugv2uav" targetName="std_msgs_generate_messages_py" />
+      <config projectName="ugv2uav" targetName="std_srvs_generate_messages_py" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -44,19 +114,110 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="OCResolveContextSettings">
+    <option name="configuration" value="0-Debug-eigen_ugv_trans_node" />
+  </component>
   <component name="ProjectId" id="1ZjXVSkF3Fx9o2Gi6KO47x1ZlCD" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../rotors_simulator" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="CMake Application.clean_test_results">
+  <component name="RunManager" selected="CMake Application.drone_waypoint_publisher">
+    <configuration name="_ugv2uav_generate_messages_check_deps_custom_trans" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="_ugv2uav_generate_messages_check_deps_custom_trans" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="actionlib_generate_messages_cpp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="actionlib_generate_messages_cpp" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="actionlib_generate_messages_eus" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="actionlib_generate_messages_eus" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="actionlib_generate_messages_lisp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="actionlib_generate_messages_lisp" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="actionlib_generate_messages_nodejs" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="actionlib_generate_messages_nodejs" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="actionlib_generate_messages_py" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="actionlib_generate_messages_py" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="actionlib_msgs_generate_messages_cpp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="actionlib_msgs_generate_messages_cpp" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="actionlib_msgs_generate_messages_eus" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="actionlib_msgs_generate_messages_eus" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="actionlib_msgs_generate_messages_lisp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="actionlib_msgs_generate_messages_lisp" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="actionlib_msgs_generate_messages_nodejs" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="actionlib_msgs_generate_messages_nodejs" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="actionlib_msgs_generate_messages_py" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="actionlib_msgs_generate_messages_py" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="clean_test_results" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="clean_test_results" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="controller_manager_msgs_generate_messages_cpp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="controller_manager_msgs_generate_messages_cpp" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="controller_manager_msgs_generate_messages_eus" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="controller_manager_msgs_generate_messages_eus" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="controller_manager_msgs_generate_messages_lisp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="controller_manager_msgs_generate_messages_lisp" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="controller_manager_msgs_generate_messages_nodejs" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="controller_manager_msgs_generate_messages_nodejs" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="controller_manager_msgs_generate_messages_py" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="controller_manager_msgs_generate_messages_py" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -67,6 +228,66 @@
       </method>
     </configuration>
     <configuration name="doxygen" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="doxygen" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="drone_waypoint_publisher" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="drone_waypoint_publisher" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ugv2uav" RUN_TARGET_NAME="drone_waypoint_publisher">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="eigen_ugv_trans_node" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="eigen_ugv_trans_node" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ugv2uav" RUN_TARGET_NAME="eigen_ugv_trans_node">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="gazebo_msgs_generate_messages_cpp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="gazebo_msgs_generate_messages_cpp" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="gazebo_msgs_generate_messages_eus" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="gazebo_msgs_generate_messages_eus" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="gazebo_msgs_generate_messages_lisp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="gazebo_msgs_generate_messages_lisp" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="gazebo_msgs_generate_messages_nodejs" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="gazebo_msgs_generate_messages_nodejs" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="gazebo_msgs_generate_messages_py" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="gazebo_msgs_generate_messages_py" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="geometry_msgs_generate_messages_cpp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="geometry_msgs_generate_messages_cpp" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="geometry_msgs_generate_messages_eus" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="geometry_msgs_generate_messages_eus" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="geometry_msgs_generate_messages_lisp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="geometry_msgs_generate_messages_lisp" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="geometry_msgs_generate_messages_nodejs" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="geometry_msgs_generate_messages_nodejs" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="geometry_msgs_generate_messages_py" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="geometry_msgs_generate_messages_py" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -87,6 +308,56 @@
       </method>
     </configuration>
     <configuration name="gtest_main" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="gtest_main" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="mav_msgs_generate_messages_cpp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="mav_msgs_generate_messages_cpp" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="mav_msgs_generate_messages_eus" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="mav_msgs_generate_messages_eus" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="mav_msgs_generate_messages_lisp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="mav_msgs_generate_messages_lisp" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="mav_msgs_generate_messages_nodejs" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="mav_msgs_generate_messages_nodejs" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="mav_msgs_generate_messages_py" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="mav_msgs_generate_messages_py" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="nav_msgs_generate_messages_cpp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="nav_msgs_generate_messages_cpp" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="nav_msgs_generate_messages_eus" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="nav_msgs_generate_messages_eus" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="nav_msgs_generate_messages_lisp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="nav_msgs_generate_messages_lisp" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="nav_msgs_generate_messages_nodejs" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="nav_msgs_generate_messages_nodejs" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="nav_msgs_generate_messages_py" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="nav_msgs_generate_messages_py" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -146,6 +417,31 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="sensor_msgs_generate_messages_cpp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="sensor_msgs_generate_messages_cpp" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="sensor_msgs_generate_messages_eus" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="sensor_msgs_generate_messages_eus" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="sensor_msgs_generate_messages_lisp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="sensor_msgs_generate_messages_lisp" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="sensor_msgs_generate_messages_nodejs" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="sensor_msgs_generate_messages_nodejs" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="sensor_msgs_generate_messages_py" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="sensor_msgs_generate_messages_py" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="std_msgs_generate_messages_cpp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="std_msgs_generate_messages_cpp" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -171,19 +467,188 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="std_srvs_generate_messages_cpp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="std_srvs_generate_messages_cpp" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="std_srvs_generate_messages_eus" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="std_srvs_generate_messages_eus" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="std_srvs_generate_messages_lisp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="std_srvs_generate_messages_lisp" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="std_srvs_generate_messages_nodejs" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="std_srvs_generate_messages_nodejs" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="std_srvs_generate_messages_py" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="std_srvs_generate_messages_py" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="tests" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="tests" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="tf2_msgs_generate_messages_cpp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="tf2_msgs_generate_messages_cpp" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="tf2_msgs_generate_messages_eus" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="tf2_msgs_generate_messages_eus" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="tf2_msgs_generate_messages_lisp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="tf2_msgs_generate_messages_lisp" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="tf2_msgs_generate_messages_nodejs" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="tf2_msgs_generate_messages_nodejs" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="tf2_msgs_generate_messages_py" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="tf2_msgs_generate_messages_py" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="trajectory_msgs_generate_messages_cpp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="trajectory_msgs_generate_messages_cpp" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="trajectory_msgs_generate_messages_eus" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="trajectory_msgs_generate_messages_eus" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="trajectory_msgs_generate_messages_lisp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="trajectory_msgs_generate_messages_lisp" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="trajectory_msgs_generate_messages_nodejs" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="trajectory_msgs_generate_messages_nodejs" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="trajectory_msgs_generate_messages_py" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="trajectory_msgs_generate_messages_py" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ugv2uav_gencpp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="ugv2uav_gencpp" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ugv2uav_generate_messages" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="ugv2uav_generate_messages" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ugv2uav_generate_messages_cpp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="ugv2uav_generate_messages_cpp" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ugv2uav_generate_messages_eus" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="ugv2uav_generate_messages_eus" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ugv2uav_generate_messages_lisp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="ugv2uav_generate_messages_lisp" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ugv2uav_generate_messages_nodejs" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="ugv2uav_generate_messages_nodejs" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ugv2uav_generate_messages_py" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="ugv2uav_generate_messages_py" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ugv2uav_geneus" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="ugv2uav_geneus" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ugv2uav_genlisp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="ugv2uav_genlisp" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ugv2uav_gennodejs" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="ugv2uav_gennodejs" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ugv2uav_genpy" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="ugv2uav_genpy" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ugv2uav_xacro_generated_to_devel_space_" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ugv2uav" TARGET_NAME="ugv2uav_xacro_generated_to_devel_space_" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <list>
+      <item itemvalue="CMake Application._ugv2uav_generate_messages_check_deps_custom_trans" />
+      <item itemvalue="CMake Application.actionlib_generate_messages_cpp" />
+      <item itemvalue="CMake Application.actionlib_generate_messages_eus" />
+      <item itemvalue="CMake Application.actionlib_generate_messages_lisp" />
+      <item itemvalue="CMake Application.actionlib_generate_messages_nodejs" />
+      <item itemvalue="CMake Application.actionlib_generate_messages_py" />
+      <item itemvalue="CMake Application.actionlib_msgs_generate_messages_cpp" />
+      <item itemvalue="CMake Application.actionlib_msgs_generate_messages_eus" />
+      <item itemvalue="CMake Application.actionlib_msgs_generate_messages_lisp" />
+      <item itemvalue="CMake Application.actionlib_msgs_generate_messages_nodejs" />
+      <item itemvalue="CMake Application.actionlib_msgs_generate_messages_py" />
       <item itemvalue="CMake Application.clean_test_results" />
+      <item itemvalue="CMake Application.controller_manager_msgs_generate_messages_cpp" />
+      <item itemvalue="CMake Application.controller_manager_msgs_generate_messages_eus" />
+      <item itemvalue="CMake Application.controller_manager_msgs_generate_messages_lisp" />
+      <item itemvalue="CMake Application.controller_manager_msgs_generate_messages_nodejs" />
+      <item itemvalue="CMake Application.controller_manager_msgs_generate_messages_py" />
       <item itemvalue="CMake Application.download_extra_data" />
       <item itemvalue="CMake Application.doxygen" />
-      <item itemvalue="CMake Application.gmock" />
-      <item itemvalue="CMake Application.gmock_main" />
-      <item itemvalue="CMake Application.gtest" />
-      <item itemvalue="CMake Application.gtest_main" />
+      <item itemvalue="CMake Application.drone_waypoint_publisher" />
+      <item itemvalue="CMake Application.eigen_ugv_trans_node" />
+      <item itemvalue="CMake Application.gazebo_msgs_generate_messages_cpp" />
+      <item itemvalue="CMake Application.gazebo_msgs_generate_messages_eus" />
+      <item itemvalue="CMake Application.gazebo_msgs_generate_messages_lisp" />
+      <item itemvalue="CMake Application.gazebo_msgs_generate_messages_nodejs" />
+      <item itemvalue="CMake Application.gazebo_msgs_generate_messages_py" />
+      <item itemvalue="CMake Application.geometry_msgs_generate_messages_cpp" />
+      <item itemvalue="CMake Application.geometry_msgs_generate_messages_eus" />
+      <item itemvalue="CMake Application.geometry_msgs_generate_messages_lisp" />
+      <item itemvalue="CMake Application.geometry_msgs_generate_messages_nodejs" />
+      <item itemvalue="CMake Application.geometry_msgs_generate_messages_py" />
+      <item itemvalue="CMake Application.mav_msgs_generate_messages_cpp" />
+      <item itemvalue="CMake Application.mav_msgs_generate_messages_eus" />
+      <item itemvalue="CMake Application.mav_msgs_generate_messages_lisp" />
+      <item itemvalue="CMake Application.mav_msgs_generate_messages_nodejs" />
+      <item itemvalue="CMake Application.mav_msgs_generate_messages_py" />
+      <item itemvalue="CMake Application.nav_msgs_generate_messages_cpp" />
+      <item itemvalue="CMake Application.nav_msgs_generate_messages_eus" />
+      <item itemvalue="CMake Application.nav_msgs_generate_messages_lisp" />
+      <item itemvalue="CMake Application.nav_msgs_generate_messages_nodejs" />
+      <item itemvalue="CMake Application.nav_msgs_generate_messages_py" />
       <item itemvalue="CMake Application.roscpp_generate_messages_cpp" />
       <item itemvalue="CMake Application.roscpp_generate_messages_eus" />
       <item itemvalue="CMake Application.roscpp_generate_messages_lisp" />
@@ -195,13 +660,61 @@
       <item itemvalue="CMake Application.rosgraph_msgs_generate_messages_nodejs" />
       <item itemvalue="CMake Application.rosgraph_msgs_generate_messages_py" />
       <item itemvalue="CMake Application.run_tests" />
+      <item itemvalue="CMake Application.sensor_msgs_generate_messages_cpp" />
+      <item itemvalue="CMake Application.sensor_msgs_generate_messages_eus" />
+      <item itemvalue="CMake Application.sensor_msgs_generate_messages_lisp" />
+      <item itemvalue="CMake Application.sensor_msgs_generate_messages_nodejs" />
+      <item itemvalue="CMake Application.sensor_msgs_generate_messages_py" />
       <item itemvalue="CMake Application.std_msgs_generate_messages_cpp" />
       <item itemvalue="CMake Application.std_msgs_generate_messages_eus" />
       <item itemvalue="CMake Application.std_msgs_generate_messages_lisp" />
       <item itemvalue="CMake Application.std_msgs_generate_messages_nodejs" />
       <item itemvalue="CMake Application.std_msgs_generate_messages_py" />
+      <item itemvalue="CMake Application.std_srvs_generate_messages_cpp" />
+      <item itemvalue="CMake Application.std_srvs_generate_messages_eus" />
+      <item itemvalue="CMake Application.std_srvs_generate_messages_lisp" />
+      <item itemvalue="CMake Application.std_srvs_generate_messages_nodejs" />
+      <item itemvalue="CMake Application.std_srvs_generate_messages_py" />
       <item itemvalue="CMake Application.tests" />
+      <item itemvalue="CMake Application.tf2_msgs_generate_messages_cpp" />
+      <item itemvalue="CMake Application.tf2_msgs_generate_messages_eus" />
+      <item itemvalue="CMake Application.tf2_msgs_generate_messages_lisp" />
+      <item itemvalue="CMake Application.tf2_msgs_generate_messages_nodejs" />
+      <item itemvalue="CMake Application.tf2_msgs_generate_messages_py" />
+      <item itemvalue="CMake Application.trajectory_msgs_generate_messages_cpp" />
+      <item itemvalue="CMake Application.trajectory_msgs_generate_messages_eus" />
+      <item itemvalue="CMake Application.trajectory_msgs_generate_messages_lisp" />
+      <item itemvalue="CMake Application.trajectory_msgs_generate_messages_nodejs" />
+      <item itemvalue="CMake Application.trajectory_msgs_generate_messages_py" />
+      <item itemvalue="CMake Application.ugv2uav_gencpp" />
+      <item itemvalue="CMake Application.ugv2uav_generate_messages" />
+      <item itemvalue="CMake Application.ugv2uav_generate_messages_cpp" />
+      <item itemvalue="CMake Application.ugv2uav_generate_messages_eus" />
+      <item itemvalue="CMake Application.ugv2uav_generate_messages_lisp" />
+      <item itemvalue="CMake Application.ugv2uav_generate_messages_nodejs" />
+      <item itemvalue="CMake Application.ugv2uav_generate_messages_py" />
+      <item itemvalue="CMake Application.ugv2uav_geneus" />
+      <item itemvalue="CMake Application.ugv2uav_genlisp" />
+      <item itemvalue="CMake Application.ugv2uav_gennodejs" />
+      <item itemvalue="CMake Application.ugv2uav_genpy" />
+      <item itemvalue="CMake Application.ugv2uav_xacro_generated_to_devel_space_" />
+      <item itemvalue="CMake Application.gmock" />
+      <item itemvalue="CMake Application.gmock_main" />
+      <item itemvalue="CMake Application.gtest" />
+      <item itemvalue="CMake Application.gtest_main" />
     </list>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -223,6 +736,31 @@
       <workItem from="1586309564365" duration="5966000" />
       <workItem from="1586324970276" duration="9919000" />
       <workItem from="1586388178514" duration="2980000" />
+      <workItem from="1588233025598" duration="14188000" />
+      <workItem from="1588301629448" duration="1071000" />
+      <workItem from="1588339185861" duration="1041000" />
+      <workItem from="1588375563149" duration="361000" />
+      <workItem from="1588388824946" duration="657000" />
+      <workItem from="1588409589250" duration="809000" />
+      <workItem from="1588562753425" duration="1053000" />
+      <workItem from="1588577047315" duration="17000" />
+      <workItem from="1589799193010" duration="1296000" />
+      <workItem from="1589978289859" duration="180000" />
+      <workItem from="1590623961374" duration="719000" />
+      <workItem from="1590648769667" duration="1246000" />
+      <workItem from="1590757238023" duration="1776000" />
+      <workItem from="1590796666770" duration="40514000" />
+      <workItem from="1590851795061" duration="106000" />
+      <workItem from="1590876270801" duration="22987000" />
+      <workItem from="1591270061671" duration="7000" />
+      <workItem from="1591579302460" duration="70000" />
+      <workItem from="1591579386464" duration="2540000" />
+      <workItem from="1591601641452" duration="6776000" />
+      <workItem from="1591706909395" duration="4829000" />
+      <workItem from="1591749339664" duration="8738000" />
+      <workItem from="1591758945538" duration="2280000" />
+      <workItem from="1591765203251" duration="22740000" />
+      <workItem from="1591833274902" duration="34120000" />
     </task>
     <servers />
   </component>
@@ -230,21 +768,57 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1965" y="357" width="625" height="390" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586312947272">
-      <screen x="1280" y="0" width="1920" height="1080" />
+    <state x="774" y="398" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591877633034">
+      <screen x="67" y="27" width="2493" height="1413" />
+    </state>
+    <state x="774" y="398" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.2493.1413/2560.72.1920.1080@67.27.2493.1413" timestamp="1591877633034" />
+    <state x="771" y="385" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.2493.1413@67.27.2493.1413" timestamp="1591579646445" />
+    <state x="956" y="494" width="958" height="424" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1591787542722">
+      <screen x="67" y="27" width="2493" height="1413" />
     </state>
     <state x="1965" y="357" width="625" height="390" key="#com.intellij.fileTypes.FileTypeChooser/1280.0.1920.1080/0.27.1280.997@1280.0.1920.1080" timestamp="1586312947272" />
-    <state x="1940" y="313" width="754" height="484" key="FileChooserDialogImpl" timestamp="1586391809690">
-      <screen x="1280" y="0" width="1920" height="1080" />
+    <state x="956" y="494" width="820" height="424" key="#com.intellij.fileTypes.FileTypeChooser/67.27.2493.1413/2560.0.1080.1920@67.27.2493.1413" timestamp="1591758136573" />
+    <state x="956" y="494" width="958" height="424" key="#com.intellij.fileTypes.FileTypeChooser/67.27.2493.1413/2560.72.1920.1080@67.27.2493.1413" timestamp="1591787542722" />
+    <state x="728" y="380" width="783" height="378" key="#com.intellij.fileTypes.FileTypeChooser/67.34.1853.1046@67.34.1853.1046" timestamp="1590758126302" />
+    <state x="85" y="171" width="2293" height="1215" key="DiffContextDialog" timestamp="1591753019403">
+      <screen x="67" y="27" width="2493" height="1413" />
     </state>
-    <state x="1940" y="313" width="754" height="484" key="FileChooserDialogImpl/1280.0.1920.1080/0.27.1280.997@1280.0.1920.1080" timestamp="1586391809690" />
-    <state x="1929" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1586388347557">
-      <screen x="1280" y="0" width="1920" height="1080" />
+    <state x="85" y="171" width="2293" height="1215" key="DiffContextDialog/67.27.2493.1413/2560.0.1080.1920@67.27.2493.1413" timestamp="1591753019403" />
+    <state x="897" y="430" width="524" height="746" key="FileChooserDialogImpl" timestamp="1591749981458">
+      <screen x="67" y="27" width="2493" height="1413" />
     </state>
-    <state x="1929" y="380" key="com.intellij.ide.util.TipDialog/1280.0.1920.1080/0.27.1280.997@1280.0.1920.1080" timestamp="1586388347557" />
-    <state x="0" y="387" width="1280" height="1011" key="dock-window-1" timestamp="1586349312617">
-      <screen x="0" y="27" width="1280" height="997" />
+    <state x="440" y="316" key="FileChooserDialogImpl/1280.0.1920.1080/0.27.1280.997@0.27.1280.997" timestamp="1588375586698" />
+    <state x="1940" y="313" width="754" height="484" key="FileChooserDialogImpl/1280.0.1920.1080/0.27.1280.997@1280.0.1920.1080" timestamp="1588252755216" />
+    <state x="704" y="332" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1588577062557" />
+    <state x="897" y="430" width="524" height="746" key="FileChooserDialogImpl/67.27.2493.1413/2560.0.1080.1920@67.27.2493.1413" timestamp="1591749981458" />
+    <state x="684" y="332" width="530" height="598" key="FileChooserDialogImpl/67.34.1853.1046@67.34.1853.1046" timestamp="1590903280820" />
+    <state x="322" y="86" key="SettingsEditor" timestamp="1590757287378">
+      <screen x="67" y="34" width="1853" height="1046" />
+    </state>
+    <state x="390" y="152" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1588562980631" />
+    <state x="322" y="86" key="SettingsEditor/67.34.1853.1046@67.34.1853.1046" timestamp="1590757287378" />
+    <state x="911" y="524" key="com.intellij.ide.util.TipDialog" timestamp="1591749442491">
+      <screen x="67" y="27" width="2493" height="1413" />
+    </state>
+    <state x="433" y="378" key="com.intellij.ide.util.TipDialog/1280.0.1920.1080/0.27.1280.997@0.27.1280.997" timestamp="1588375563200" />
+    <state x="1929" y="380" key="com.intellij.ide.util.TipDialog/1280.0.1920.1080/0.27.1280.997@1280.0.1920.1080" timestamp="1588339186357" />
+    <state x="911" y="524" key="com.intellij.ide.util.TipDialog/67.27.2493.1413/2560.0.1080.1920@67.27.2493.1413" timestamp="1591749442491" />
+    <state x="911" y="524" key="com.intellij.ide.util.TipDialog/67.27.2493.1413@67.27.2493.1413" timestamp="1591601641493" />
+    <state x="694" y="402" key="com.intellij.ide.util.TipDialog/67.34.1853.1046@67.34.1853.1046" timestamp="1591270061593" />
+    <state x="114" y="606" width="2322" height="780" key="dock-window-1" timestamp="1591765223249">
+      <screen x="67" y="27" width="2493" height="1413" />
     </state>
     <state x="0" y="387" width="1280" height="1011" key="dock-window-1/1280.0.1920.1080/0.27.1280.997@1280.0.1920.1080" timestamp="1586349312617" />
+    <state x="823" y="27" width="1020" height="1413" maximized="true" key="dock-window-1/67.27.2493.1413/2560.0.1080.1920@2560.0.1080.1920" timestamp="1591708859511" />
+    <state x="2372" y="0" width="1010" height="1059" maximized="true" key="dock-window-1/67.27.2493.1413/2560.0.1080.1920@67.27.2493.1413" timestamp="1591759050681" />
+    <state x="114" y="606" width="2322" height="780" key="dock-window-1/67.27.2493.1413/2560.72.1920.1080@67.27.2493.1413" timestamp="1591765223249" />
+    <state x="573" y="251" key="run.anything.popup" timestamp="1590876446468">
+      <screen x="67" y="34" width="1853" height="1046" />
+    </state>
+    <state x="573" y="251" key="run.anything.popup/67.34.1853.1046@67.34.1853.1046" timestamp="1590876446468" />
+    <state x="892" y="340" key="search.everywhere.popup" timestamp="1591873807450">
+      <screen x="67" y="27" width="2493" height="1413" />
+    </state>
+    <state x="892" y="340" key="search.everywhere.popup/67.27.2493.1413/2560.72.1920.1080@67.27.2493.1413" timestamp="1591873807450" />
   </component>
 </project>

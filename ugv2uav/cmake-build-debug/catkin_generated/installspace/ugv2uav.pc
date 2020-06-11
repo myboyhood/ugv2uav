@@ -3,6 +3,6 @@ prefix=/usr/local
 Name: ugv2uav
 Description: Description of ugv2uav
 Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
+Cflags: -I/usr/local/include
+Libs: -L/usr/local/lib 
+Requires: urdf xacro rospy geometry_msgs roscpp nav_msgs gazebo_msgs mav_msgs sensor_msgs message_runtime

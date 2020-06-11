@@ -129,7 +129,51 @@ file(INSTALL DESTINATION "/usr/local" TYPE FILE FILES "/home/wzy/catkin_ws/src/u
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  include("/home/wzy/catkin_ws/src/ugv2uav/cmake-build-debug/catkin_generated/safe_execute_install.cmake")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ugv2uav/msg" TYPE FILE FILES "/home/wzy/catkin_ws/src/ugv2uav/msg/custom_trans.msg")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ugv2uav/cmake" TYPE FILE FILES "/home/wzy/catkin_ws/src/ugv2uav/cmake-build-debug/catkin_generated/installspace/ugv2uav-msg-paths.cmake")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/wzy/catkin_ws/src/ugv2uav/cmake-build-debug/devel/include/ugv2uav")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/wzy/catkin_ws/src/ugv2uav/cmake-build-debug/devel/share/roseus/ros/ugv2uav")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/wzy/catkin_ws/src/ugv2uav/cmake-build-debug/devel/share/common-lisp/ros/ugv2uav")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/wzy/catkin_ws/src/ugv2uav/cmake-build-debug/devel/share/gennodejs/ros/ugv2uav")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  execute_process(COMMAND "/usr/bin/python2" -m compileall "/home/wzy/catkin_ws/src/ugv2uav/cmake-build-debug/devel/lib/python2.7/dist-packages/ugv2uav")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/wzy/catkin_ws/src/ugv2uav/cmake-build-debug/devel/lib/python2.7/dist-packages/ugv2uav" REGEX "/\\_\\_init\\_\\_\\.py$" EXCLUDE REGEX "/\\_\\_init\\_\\_\\.pyc$" EXCLUDE)
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/wzy/catkin_ws/src/ugv2uav/cmake-build-debug/devel/lib/python2.7/dist-packages/ugv2uav" FILES_MATCHING REGEX "/home/wzy/catkin_ws/src/ugv2uav/cmake-build-debug/devel/lib/python2.7/dist-packages/ugv2uav/.+/__init__.pyc?$")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/wzy/catkin_ws/src/ugv2uav/cmake-build-debug/catkin_generated/installspace/ugv2uav.pc")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ugv2uav/cmake" TYPE FILE FILES "/home/wzy/catkin_ws/src/ugv2uav/cmake-build-debug/catkin_generated/installspace/ugv2uav-msg-extras.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -141,6 +185,29 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ugv2uav" TYPE FILE FILES "/home/wzy/catkin_ws/src/ugv2uav/package.xml")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/ugv2uav" TYPE PROGRAM FILES "/home/wzy/catkin_ws/src/ugv2uav/cmake-build-debug/catkin_generated/installspace/4_ugv_teleop_ctrl")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/ugv2uav" TYPE PROGRAM FILES "/home/wzy/catkin_ws/src/ugv2uav/cmake-build-debug/catkin_generated/installspace/opti_ugv.py")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/ugv2uav" TYPE PROGRAM FILES "/home/wzy/catkin_ws/src/ugv2uav/cmake-build-debug/catkin_generated/installspace/ugv_autodrive.py")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ugv2uav" TYPE DIRECTORY FILES "/home/wzy/catkin_ws/src/ugv2uav/launch")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ugv2uav" TYPE DIRECTORY FILES
+    "/home/wzy/catkin_ws/src/ugv2uav/model/ugv/meshes"
+    "/home/wzy/catkin_ws/src/ugv2uav/model/ugv/urdf"
+    )
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)

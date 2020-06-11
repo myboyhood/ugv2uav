@@ -1,0 +1,51 @@
+<launch>
+    <arg name="ugv_name" default="ugv1"/>
+    <arg name="namespace" default="$(arg ugv_name)"/>
+    <arg name="model_xacro" default="$(find ugv2uav)/model/ugv/urdf/turtlebot3_waffle.urdf.xacro"/>
+    <arg name="x" default="0.0"/>
+    <arg name="y" default="0.0"/>
+    <arg name="z" default="0.0"/>
+    <arg name="R" default="0"/>
+    <arg name="P" default="0"/>
+    <arg name="Y" default="0"/>
+
+    <!-- send the robot XML to param server -->
+    <param name="robot_description" command="
+    $(find xacro)/xacro '$(arg model_xacro)'
+    namespace:=$(arg namespace)"
+    />
+
+    <!-- push robot_description to factory and spawn robot in gazebo -->
+    <node name="spawn_$(arg namespace)" pkg="gazebo_ros" type="spawn_model"
+          args="-param robot_description
+         -urdf
+         -x $(arg x)
+         -y $(arg y)
+         -z $(arg z)
+         -R $(arg R)
+         -P $(arg P)
+         -Y $(arg Y)
+         -model $(arg namespace)"
+          respawn="false" output="screen">
+    </node>
+
+    <!--GUI used to send fake joint values-->
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+        <param name="use_gui" value="false"/>
+    </node>
+
+    <!--Publish robot state to TF-->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
+        <remap from="/joint_states" to="/$(arg namespace)/joint_states" />
+    </node>
+
+    <!--Load the joint controllers to param server-->
+    <rosparam file="$(find ugv2uav)/config/PID_control.yaml" command="load"/>
+
+    <!--Load controllers-->
+<!--    <node name="spawner" pkg="controller_manager" type="spawner" respawn="false"-->
+<!--          output="screen" ns="/$(arg namespace)" args="joint_state_controller joint1_position_controller"/>-->
+    <!--<node name="spawner" pkg="controller_manager" type="spawner" respawn="false"
+         output="screen" ns="/$(arg namespace)" args="ugv1/joint_state_controller ugv1/joint1_position_controller"/>-->
+
+</launch>

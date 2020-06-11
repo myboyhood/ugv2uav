@@ -1,0 +1,37 @@
+<launch>
+  <arg name="world_name" default="pelican"/>
+
+  <env name="GAZEBO_MODEL_PATH" value="${GAZEBO_MODEL_PATH}:$(find rotors_gazebo)/models"/>
+  <env name="GAZEBO_RESOURCE_PATH" value="${GAZEBO_RESOURCE_PATH}:$(find rotors_gazebo)/models"/>
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find rotors_gazebo)/worlds/$(arg world_name).world" />
+	<arg name="verbose" value="true"/>
+    <!-- <arg name="debug" value="true"/> -->
+    <arg name="paused" value="false"/>
+    <!-- <arg name="gui" value="false"/> -->
+  </include>
+
+<group ns="ugv1">
+    <include file="$(find ugv2uav)/launch/spawn_ugv.launch">
+        <arg name="ugv_name" value="ugv1"/>
+        <arg name="x" default="0.0"/>
+        <arg name="y" default="0.0"/>
+        <arg name="z" default="0.0"/>
+        <arg name="R" default="0"/>
+        <arg name="P" default="0"/>
+        <arg name="Y" default="0"/>
+    </include>
+</group>
+
+  <group ns="ugv2">
+    <include file="$(find ugv2uav)/launch/spawn_ugv.launch">
+      <arg name="ugv_name" value="ugv2"/>
+      <arg name="x" default="0.0"/>
+      <arg name="y" default="-3"/>
+      <arg name="z" default="0.0"/>
+      <arg name="R" default="0"/>
+      <arg name="P" default="0"/>
+      <arg name="Y" default="0.8"/>
+    </include>
+  </group>
+</launch>

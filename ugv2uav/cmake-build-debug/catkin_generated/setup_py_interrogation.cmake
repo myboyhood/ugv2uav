@@ -1,0 +1,6 @@
+set(ugv2uav_SETUP_PY_VERSION "0.0.0")
+set(ugv2uav_SETUP_PY_SCRIPTS "")
+set(ugv2uav_SETUP_PY_PACKAGES "ugv2uav")
+set(ugv2uav_SETUP_PY_PACKAGE_DIRS "src/ugv2uav")
+set(ugv2uav_SETUP_PY_MODULES "")
+set(ugv2uav_SETUP_PY_MODULE_DIRS "")

@@ -1,0 +1,31 @@
+<launch>
+    <arg name="uav_name" default="uav"/>
+    <arg name="namespace" default="$(arg uav_name)"/>
+    <arg name="model_xacro" default="$(find ugv2uav)/model/uav/uav.xacro"/>
+    <arg name="x" default="6"/>
+    <arg name="y" default="0"/>
+    <arg name="z" default="4"/>
+    <arg name="R" default="0"/>
+    <arg name="P" default="0"/>
+    <arg name="Y" default="0"/>
+
+    <!-- send the robot XML to param server -->
+    <param name="robot_description" command="
+    $(find xacro)/xacro '$(arg model_xacro)'
+    namespace:=$(arg namespace)"
+    />
+
+    <!-- push robot_description to factory and spawn robot in gazebo -->
+    <node name="spawn_$(arg namespace)" pkg="gazebo_ros" type="spawn_model"
+          args="-param robot_description
+         -urdf
+         -x $(arg x)
+         -y $(arg y)
+         -z $(arg z)
+         -R $(arg R)
+         -P $(arg P)
+         -Y $(arg Y)
+         -model $(arg namespace)"
+          respawn="false" output="screen">
+    </node>
+</launch>

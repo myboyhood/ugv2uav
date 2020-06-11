@@ -11,7 +11,21 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  urdf
+  xacro
+  controller_manager
+  joint_state_controller
+  robot_state_publisher
+  geometry_msgs
+  nav_msgs
+  gazebo_msgs
+  mav_msgs
+  sensor_msgs
+  std_msgs
+  message_generation
 )
+find_package(Ceres REQUIRED)
+find_package(GLEW REQUIRED)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -20,7 +34,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed
 ## See http://ros.org/doc/api/catkin/html/user_guide/setup_dot_py.html
-# catkin_python_setup()
+catkin_python_setup()
 
 ################################################
 ## Declare ROS messages, services and actions ##
@@ -47,11 +61,10 @@ find_package(catkin REQUIRED COMPONENTS
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-# add_message_files(
-#   FILES
-#   Message1.msg
-#   Message2.msg
-# )
+ add_message_files(
+   FILES
+   custom_trans.msg
+ )
 
 ## Generate services in the 'srv' folder
 # add_service_files(
@@ -68,10 +81,10 @@ find_package(catkin REQUIRED COMPONENTS
 # )
 
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   std_msgs
-# )
+ generate_messages(
+   DEPENDENCIES
+   std_msgs
+ )
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -103,6 +116,13 @@ find_package(catkin REQUIRED COMPONENTS
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
+  CATKIN_DEPENDS urdf xacro rospy geometry_msgs
+        roscpp
+        nav_msgs
+        gazebo_msgs
+        mav_msgs
+        sensor_msgs
+        message_runtime
 #  INCLUDE_DIRS include
 #  LIBRARIES ugv2uav
 #  CATKIN_DEPENDS roscpp rospy std_msgs
@@ -116,8 +136,10 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 include_directories(
-# include
+  include
   ${catkin_INCLUDE_DIRS}
+  ${CERES_INCLUDE_DIRS}
+  ${GLEW_INCLUDE_DIRS}
 )
 
 ## Declare a C++ library
@@ -143,13 +165,22 @@ include_directories(
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
-# add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_executable(drone_waypoint_publisher src/drone_waypoint_publisher.cpp )
+add_dependencies(drone_waypoint_publisher ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
+add_executable(eigen_ugv_trans_node src/Eigen_UGV_Trans.cpp src/UGV.cpp )
+add_dependencies(eigen_ugv_trans_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-# target_link_libraries(${PROJECT_NAME}_node
-#   ${catkin_LIBRARIES}
-# )
+target_link_libraries(drone_waypoint_publisher
+   ${catkin_LIBRARIES}
+ )
 
+target_link_libraries(eigen_ugv_trans_node
+        ${catkin_LIBRARIES}
+        ${CERES_LIBRARIES}
+        ${GLEW_LIBRARIES}
+        )
 #############
 ## Install ##
 #############
@@ -184,6 +215,21 @@ include_directories(
 #   FILES_MATCHING PATTERN "*.h"
 #   PATTERN ".svn" EXCLUDE
 # )
+
+catkin_install_python(PROGRAMS
+        nodes/4_ugv_teleop_ctrl
+        nodes/opti_ugv.py
+        nodes/ugv_autodrive.py
+        DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+        )
+
+install(DIRECTORY launch
+        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+        )
+
+install(DIRECTORY model/ugv/meshes model/ugv/urdf
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)
 
 ## Mark other files for installation (e.g. launch and bag files, etc.)
 # install(FILES
