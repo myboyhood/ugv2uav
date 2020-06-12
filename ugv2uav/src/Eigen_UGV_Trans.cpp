@@ -19,7 +19,7 @@ ugv2uav::custom_trans ugv1_trans_vec, ugv2_trans_vec;
 nav_msgs::Odometry drone_odom;
 UGV ugv1,ugv2;
 Eigen::Matrix<double,4, 1> WTraj_s_long,WTraj_e_long,WTraj_s_short,WTraj_e_short;//!start point of long direction in World_Traj,  end point of short direction in World_Traj
-
+std::pair<float,float> maxScoreYaw_pair;
 
 void UGV_1_Pose_cb(const nav_msgs::OdometryConstPtr& msg)
 {
@@ -81,7 +81,7 @@ int main(int argc, char **argv)
 {
     ros::init(argc, argv, "eigen_ugv_trans");
     ros::NodeHandle n;
-    ros::Rate loop_rate(10);
+    ros::Rate loop_rate(5);
     ros::Subscriber ugv1_odom = n.subscribe("/ugv1/odom",1,UGV_1_Pose_cb);
     ros::Subscriber ugv2_odom = n.subscribe("/ugv2/odom",1,UGV_2_Pose_cb);
     ros::Subscriber uav_odom = n.subscribe("/hummingbird/ground_truth/odometry",5,drone_odom_cb);
@@ -148,7 +148,8 @@ int main(int argc, char **argv)
         //! ugv1
         //!get yaw available interval
         ugv1.esti_yaw_interval(WTraj_s_long,WTraj_e_long);
-        ugv1.find_max_Score(score,WTraj_s_long,WTraj_e_long);
+        maxScoreYaw_pair = ugv1.forward_back_score(ugv1.yaw_min, ugv1.yaw_max, WTraj_s_long, WTraj_e_long);
+
         //! ugv2
 //        ugv2.esti_yaw_interval(WTraj_s_long,WTraj_e_long);
 //        ugv2.get_Score(score,WTraj_s_long,WTraj_e_long);

@@ -1470,6 +1470,33 @@ src/drone_waypoint_publisher.cpp.s:
 	$(MAKE) -f CMakeFiles/drone_waypoint_publisher.dir/build.make CMakeFiles/drone_waypoint_publisher.dir/src/drone_waypoint_publisher.cpp.s
 .PHONY : src/drone_waypoint_publisher.cpp.s
 
+src/opengl_plot.o: src/opengl_plot.cpp.o
+
+.PHONY : src/opengl_plot.o
+
+# target to build an object file
+src/opengl_plot.cpp.o:
+	$(MAKE) -f CMakeFiles/eigen_ugv_trans_node.dir/build.make CMakeFiles/eigen_ugv_trans_node.dir/src/opengl_plot.cpp.o
+.PHONY : src/opengl_plot.cpp.o
+
+src/opengl_plot.i: src/opengl_plot.cpp.i
+
+.PHONY : src/opengl_plot.i
+
+# target to preprocess a source file
+src/opengl_plot.cpp.i:
+	$(MAKE) -f CMakeFiles/eigen_ugv_trans_node.dir/build.make CMakeFiles/eigen_ugv_trans_node.dir/src/opengl_plot.cpp.i
+.PHONY : src/opengl_plot.cpp.i
+
+src/opengl_plot.s: src/opengl_plot.cpp.s
+
+.PHONY : src/opengl_plot.s
+
+# target to generate assembly for a file
+src/opengl_plot.cpp.s:
+	$(MAKE) -f CMakeFiles/eigen_ugv_trans_node.dir/build.make CMakeFiles/eigen_ugv_trans_node.dir/src/opengl_plot.cpp.s
+.PHONY : src/opengl_plot.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1586,6 +1613,9 @@ help:
 	@echo "... src/drone_waypoint_publisher.o"
 	@echo "... src/drone_waypoint_publisher.i"
 	@echo "... src/drone_waypoint_publisher.s"
+	@echo "... src/opengl_plot.o"
+	@echo "... src/opengl_plot.i"
+	@echo "... src/opengl_plot.s"
 .PHONY : help
 
 

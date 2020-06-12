@@ -1323,6 +1323,9 @@
 		<Unit filename="/home/wzy/catkin_ws/src/ugv2uav/src/drone_waypoint_publisher.cpp">
 			<Option target="drone_waypoint_publisher"/>
 		</Unit>
+		<Unit filename="/home/wzy/catkin_ws/src/ugv2uav/src/opengl_plot.cpp">
+			<Option target="eigen_ugv_trans_node"/>
+		</Unit>
 		<Unit filename="/usr/src/googletest/googlemock/src/gmock-all.cc">
 			<Option target="gmock_main"/>
 			<Option target="gmock"/>

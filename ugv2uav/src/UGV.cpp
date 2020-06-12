@@ -3,6 +3,7 @@
 //
 #include <ugv2uav/UGV.h>
 #include "math.h"
+#include "ugv2uav/opengl_plot.h"
 UGV::UGV()
 {
     internal_mtx_ext.matrix() <<  1206.89,0,960,0,
@@ -117,10 +118,10 @@ void UGV::get_Score(float &score,Eigen::Matrix<double,4, 1> &WT_s_long_,Eigen::M
         uv_e_short = get_uv_from_worldPoint(WT_e_short);
         std::cout << "uv_s_short: x y " << uv_s_short.x << "    " << uv_s_short.y << std::endl;
         float score_long,score_short;
-        score_long = weight_long * ( sqrt((uv_s_long.y-uv_e_long.y)*(uv_s_long.y-uv_e_long.y) + (uv_s_long.x-uv_e_long.x)*(uv_s_long.x-uv_e_long.x))
+        score_long = weight_long_simple * ( sqrt((uv_s_long.y-uv_e_long.y)*(uv_s_long.y-uv_e_long.y) + (uv_s_long.x-uv_e_long.x)*(uv_s_long.x-uv_e_long.x))
                                      / sqrt((WT_s_long(0,0)-WT_e_long(0,0))*(WT_s_long(0,0)-WT_e_long(0,0)) + (WT_s_long(1,0)-WT_e_long(1,0))*(WT_s_long(1,0)-WT_e_long(1,0))) );
 
-        score_short = weight_short * ( sqrt((uv_s_short.y-uv_e_short.y)*(uv_s_short.y-uv_e_short.y) + (uv_s_short.x-uv_e_short.x)*(uv_s_short.x-uv_e_short.x))
+        score_short = weight_short_simple * ( sqrt((uv_s_short.y-uv_e_short.y)*(uv_s_short.y-uv_e_short.y) + (uv_s_short.x-uv_e_short.x)*(uv_s_short.x-uv_e_short.x))
                                        / sqrt((WT_s_short(0,0)-WT_e_short(0,0))*(WT_s_short(0,0)-WT_e_short(0,0)) + (WT_s_short(1,0)-WT_e_short(1,0))*(WT_s_short(1,0)-WT_e_short(1,0))) );
         score = score_long + score_short;
         std::cout << "score_long: " << score_long << std::endl <<
@@ -133,39 +134,249 @@ void UGV::get_Score(float &score,Eigen::Matrix<double,4, 1> &WT_s_long_,Eigen::M
 
 }
 
-void UGV::find_max_Score(float &score,Eigen::Matrix<double,4, 1> &WT_s_long_,Eigen::Matrix<double,4, 1> &WT_e_long_)
+float UGV::weight_long_func(float curr_score, float min_score, float max_score)
 {
-    yaw_opti_buff.clear();
-    generate_4_points_of_traj(WT_s_long_,WT_e_long_);
-    for(yaw_opti=yaw_min;yaw_opti<=yaw_max;) {
+    float score_level;
+    score_level = (curr_score - min_score) / (max_score - min_score);
+    std::cout << "long_score_level: " << score_level << std::endl;
+    return score_level;
+}
 
-        rotation_mtx_yaw_opti = Eigen::AngleAxisd(yaw_opti, Eigen::Vector3d::UnitZ()) *
-                              Eigen::AngleAxisd(0, Eigen::Vector3d::UnitY()) *
-                              Eigen::AngleAxisd(0, Eigen::Vector3d::UnitX());
+float UGV::weight_short_func(float curr_score, float min_score, float max_score)
+{
+    float score_level;
+    score_level = (curr_score - min_score) / (max_score - min_score);
+    std::cout << "short_score_level: " << score_level << std::endl;
+    return score_level;
+}
 
+float UGV::score_fun(float &yaw_fun, Eigen::Matrix<double,4, 1> &WT_s_long_,Eigen::Matrix<double,4, 1> &WT_e_long_) {
+
+    float score_long = 0;
+    float score_short = 0;
+    float score_long_weight, score_short_weight;
+    generate_4_points_of_traj(WT_s_long_, WT_e_long_);
+
+        rotation_mtx_yaw_opti = Eigen::AngleAxisd(yaw_fun, Eigen::Vector3d::UnitZ()) *
+                                Eigen::AngleAxisd(0, Eigen::Vector3d::UnitY()) *
+                                Eigen::AngleAxisd(0, Eigen::Vector3d::UnitX());
+//        std::cout << "rotation_mtx_yaw_opti: " << rotation_mtx_yaw_opti.matrix() << std::endl;
         Trans_mtx_yaw_opti = Eigen::Isometry3d::Identity();
-        Trans_mtx_yaw_opti.rotate(rotation_matrix_yaw);
+        Trans_mtx_yaw_opti.rotate(rotation_mtx_yaw_opti);
         Trans_mtx_yaw_opti.pretranslate(ugv_Trans.translation().matrix());
-        uv_s_long = get_uv_from_sim_Opti(Trans_mtx_yaw_opti,WT_s_long);
-        uv_e_long = get_uv_from_sim_Opti(Trans_mtx_yaw_opti,WT_e_long);
-        uv_s_short = get_uv_from_sim_Opti(Trans_mtx_yaw_opti,WT_s_short);
-        uv_e_short = get_uv_from_sim_Opti(Trans_mtx_yaw_opti,WT_e_short);
-        float score_long,score_short;
-        score_long = weight_long * ( sqrt((uv_s_long.y-uv_e_long.y)*(uv_s_long.y-uv_e_long.y) + (uv_s_long.x-uv_e_long.x)*(uv_s_long.x-uv_e_long.x))
-                                     / sqrt((WT_s_long(0,0)-WT_e_long(0,0))*(WT_s_long(0,0)-WT_e_long(0,0)) + (WT_s_long(1,0)-WT_e_long(1,0))*(WT_s_long(1,0)-WT_e_long(1,0))) );
+        uv_s_long = get_uv_from_sim_Opti(Trans_mtx_yaw_opti, WT_s_long);
+//        std::cout << "uv_s_long " << uv_s_long <<
+//                  sqrt((uv_s_long.y - uv_e_long.y) * (uv_s_long.y - uv_e_long.y) +
+//                       (uv_s_long.x - uv_e_long.x) * (uv_s_long.x - uv_e_long.x)) << std::endl;
+        uv_e_long = get_uv_from_sim_Opti(Trans_mtx_yaw_opti, WT_e_long);
+//        std::cout << "uv_e_long " << uv_e_long << std::endl;
+        uv_s_short = get_uv_from_sim_Opti(Trans_mtx_yaw_opti, WT_s_short);
+        uv_e_short = get_uv_from_sim_Opti(Trans_mtx_yaw_opti, WT_e_short);
 
-        score_short = weight_short * ( sqrt((uv_s_short.y-uv_e_short.y)*(uv_s_short.y-uv_e_short.y) + (uv_s_short.x-uv_e_short.x)*(uv_s_short.x-uv_e_short.x))
-                                       / sqrt((WT_s_short(0,0)-WT_e_short(0,0))*(WT_s_short(0,0)-WT_e_short(0,0)) + (WT_s_short(1,0)-WT_e_short(1,0))*(WT_s_short(1,0)-WT_e_short(1,0))) );
-        score = score_long + score_short;
-        yaw_opti_buff.push_back(score);
-        yaw_opti += 0.05;
-    }
-    score_it = std::max_element(std::begin(yaw_opti_buff),std::end(yaw_opti_buff));
+        score_long = sqrt((uv_s_long.y - uv_e_long.y) * (uv_s_long.y - uv_e_long.y) +
+                          (uv_s_long.x - uv_e_long.x) * (uv_s_long.x - uv_e_long.x))
+                     / sqrt((WT_s_long(0, 0) - WT_e_long(0, 0)) * (WT_s_long(0, 0) - WT_e_long(0, 0)) +
+                            (WT_s_long(1, 0) - WT_e_long(1, 0)) * (WT_s_long(1, 0) - WT_e_long(1, 0)));
 
-    std::cout << "score_max: " << *score_it << "   at position: " << std::distance(std::begin(yaw_opti_buff),score_it) << std::endl;
-    yaw_of_score_max = *score_it;
+        score_short = (sqrt((uv_s_short.y - uv_e_short.y) * (uv_s_short.y - uv_e_short.y) +
+                            (uv_s_short.x - uv_e_short.x) * (uv_s_short.x - uv_e_short.x))
+                       / sqrt((WT_s_short(0, 0) - WT_e_short(0, 0)) * (WT_s_short(0, 0) - WT_e_short(0, 0)) +
+                              (WT_s_short(1, 0) - WT_e_short(1, 0)) * (WT_s_short(1, 0) - WT_e_short(1, 0))));
+
+        return score_long + score_short;
 
 }
+
+std::pair<float,float> UGV::forward_back_score(float &yaw_min, float &yaw_max,Eigen::Matrix<double,4, 1> &WT_s_long_,Eigen::Matrix<double,4, 1> &WT_e_long_)
+{
+    score_max_buff.clear();
+    yaw_of_score_max_buff.clear();
+    for(int i = 1; i<=3; i++)
+    {
+    float s0_init1 ;// initial point
+    float s1;
+    float step = 0.02;
+    int direction = 1;
+    int count = 0;
+    float score_0,score_1;
+
+
+    s0_init1 = yaw_min + i*1.0/4*(yaw_max - yaw_min);//try 3 initial points
+
+    std::cout << "in + direction,direction and step "<< direction << step << std::endl;
+    score_0 = score_fun(s0_init1,WT_s_long_,WT_e_long_);
+    s1 = s0_init1 + direction*step;
+    score_1 = score_fun(s1,WT_s_long_,WT_e_long_);
+
+    if (score_1 > score_0)
+    {
+        while(score_1 > score_0 )
+        {
+            std::cout << "go on in + direction" << std::endl;
+            step = step*2;
+            s0_init1 = s1;
+            score_0 = score_1;
+            s1 = s0_init1 + direction*step;
+            std::cout << "in + direction,direction and step "<< direction << step << std::endl;
+            std::cout << "in + direction,s0_init1 = "<< s0_init1 << std::endl;
+            std::cout << "in + direction,s1 = "<< s1 << std::endl;
+            if (s1 >=yaw_max)
+            {   score_1 = score_fun(yaw_max,WT_s_long_,WT_e_long_);
+                if(score_1 > score_0)
+                {
+                    score_max = score_1;
+                    yaw_of_score_max = yaw_max;
+                }
+                else
+                {
+                    score_max = score_0;
+                    yaw_of_score_max = s0_init1;
+                }
+
+                break;
+            }
+            score_1 = score_fun(s1,WT_s_long_,WT_e_long_);
+            count++;
+        }
+    }
+
+    if(score_1 < score_0)
+    {
+        if(count > 0)
+        {
+            score_max = score_0;
+            yaw_of_score_max = s0_init1;
+        }
+        else //convert direction in the second step
+        {   std::cout << "second step convert direction" << std::endl;
+            direction = -direction; // convert direction
+            s1 = s0_init1 + direction*step;
+            score_1 = score_fun(s1,WT_s_long_,WT_e_long_);
+            while(score_1 > score_0)
+            {   std::cout << "go on in - direction" << std::endl;
+                step = step * 2;
+                s0_init1 = s1;
+                score_0 = score_1;
+                s1 = s0_init1 + direction*step;
+                if (s1 <=yaw_min)
+                {   score_1 = score_fun(yaw_min,WT_s_long_,WT_e_long_);
+                    if(score_1 > score_0)
+                    {
+                        score_max = score_1;
+                        yaw_of_score_max = yaw_min;
+                    }
+                    else
+                    {
+                        score_max = score_0;
+                        yaw_of_score_max = s0_init1;
+                    }
+
+                    break;
+                }
+                score_1 = score_fun(s1,WT_s_long_,WT_e_long_);
+                count++;
+            }
+        }
+    }
+    std::cout << "get maximum : " <<  score_max  << "yaw of max_score:" << yaw_of_score_max << std::endl;
+
+    score_max_buff.push_back(score_max);
+    yaw_of_score_max_buff.push_back(yaw_of_score_max);
+    }
+    score_max_it = std::max_element(std::begin(score_max_buff),std::end(score_max_buff));
+    int position = std::distance(std::begin(score_max_buff),score_max_it);
+    std::cout << "get maximum : " <<  *score_max_it  << "yaw of max_score:" << yaw_of_score_max_buff[position] << std::endl;
+
+    return std::make_pair(score_max,yaw_of_score_max);
+}
+
+//void UGV::find_max_Score(float &score,Eigen::Matrix<double,4, 1> &WT_s_long_,Eigen::Matrix<double,4, 1> &WT_e_long_)
+//{
+//    float score_long = 0;
+//    float score_short = 0;
+//    float score_long_weight, score_short_weight;
+//    //clear buff
+//    yaw_opti_buff.clear();
+//    score_long_buff.clear();
+//    score_short_buff.clear();
+//    score_buff.clear();
+//
+//    generate_4_points_of_traj(WT_s_long_,WT_e_long_);
+//
+//    for(yaw_opti=yaw_min;yaw_opti<=yaw_max;) {
+//
+//        rotation_mtx_yaw_opti = Eigen::AngleAxisd(yaw_opti, Eigen::Vector3d::UnitZ()) *
+//                              Eigen::AngleAxisd(0, Eigen::Vector3d::UnitY()) *
+//                              Eigen::AngleAxisd(0, Eigen::Vector3d::UnitX());
+////        std::cout << "rotation_mtx_yaw_opti: " << rotation_mtx_yaw_opti.matrix() << std::endl;
+//        Trans_mtx_yaw_opti = Eigen::Isometry3d::Identity();
+//        Trans_mtx_yaw_opti.rotate(rotation_mtx_yaw_opti);
+//        Trans_mtx_yaw_opti.pretranslate(ugv_Trans.translation().matrix());
+//        uv_s_long = get_uv_from_sim_Opti(Trans_mtx_yaw_opti,WT_s_long);
+//        std::cout << "uv_s_long " << uv_s_long <<
+//        sqrt((uv_s_long.y-uv_e_long.y)*(uv_s_long.y-uv_e_long.y) + (uv_s_long.x-uv_e_long.x)*(uv_s_long.x-uv_e_long.x))<< std::endl;
+//        uv_e_long = get_uv_from_sim_Opti(Trans_mtx_yaw_opti,WT_e_long);
+//        std::cout << "uv_e_long " << uv_e_long << std::endl;
+//        uv_s_short = get_uv_from_sim_Opti(Trans_mtx_yaw_opti,WT_s_short);
+//        uv_e_short = get_uv_from_sim_Opti(Trans_mtx_yaw_opti,WT_e_short);
+//
+//        score_long = sqrt((uv_s_long.y-uv_e_long.y)*(uv_s_long.y-uv_e_long.y) + (uv_s_long.x-uv_e_long.x)*(uv_s_long.x-uv_e_long.x))
+//                         / sqrt((WT_s_long(0,0)-WT_e_long(0,0))*(WT_s_long(0,0)-WT_e_long(0,0)) + (WT_s_long(1,0)-WT_e_long(1,0))*(WT_s_long(1,0)-WT_e_long(1,0))) ;
+//
+//        score_short = ( sqrt((uv_s_short.y-uv_e_short.y)*(uv_s_short.y-uv_e_short.y) + (uv_s_short.x-uv_e_short.x)*(uv_s_short.x-uv_e_short.x))
+//                                       / sqrt((WT_s_short(0,0)-WT_e_short(0,0))*(WT_s_short(0,0)-WT_e_short(0,0)) + (WT_s_short(1,0)-WT_e_short(1,0))*(WT_s_short(1,0)-WT_e_short(1,0))) );
+//
+//        score_long_buff.push_back(score_long);
+//        score_short_buff.push_back(score_short);
+//
+////        yaw_score = std::make_pair(yaw_opti,score);
+////        scale_yaw_score_buff.push_back(yaw_score);
+//        std::cout << "yaw and short long score: " << yaw_opti << "  "<< score_short <<"  " <<score_long << std::endl;
+////        yaw_opti_buff.push_back(score);
+//        yaw_opti += 0.05;
+//    }
+//
+//    //find max of score_long
+//    s_long_max_it = std::max_element(std::begin(score_long_buff),std::end(score_long_buff));
+//    s_long_min_it = std::min_element(std::begin(score_long_buff),std::end(score_long_buff));
+//    s_short_max_it = std::max_element(std::begin(score_short_buff),std::end(score_short_buff));
+//    s_short_min_it = std::min_element(std::begin(score_short_buff),std::end(score_short_buff));
+//
+//    for(int i=0; i < score_long_buff.size(); i++)
+//    {
+//        score_long_weight = weight_long_func(score_long_buff[i],*s_long_min_it,*s_long_max_it);
+//        score_short_weight = weight_short_func(score_short_buff[i],*s_short_min_it,*s_short_max_it);
+//        score = score_long_weight*score_long + score_short_weight * score_short;
+//
+//        score_buff.push_back(score);
+//        std::cout << "score : " << score << std::endl;
+//
+//    }
+//
+//
+//    score_it = std::max_element(std::begin(score_buff),std::end(score_buff));
+//
+//    std::cout << "score_max: " << *score_it << "   at position: " << std::distance(std::begin(score_buff),score_it) << std::endl;
+//
+//
+////    //!opengl to plot score
+////    glClear(GL_COLOR_BUFFER_BIT);
+////    glBegin(GL_LINES);
+////    glPointSize(10.0f);
+////    glColor3f(0.0f, 1.0f, 0.0f);
+////    glVertex2f(-1.0f, 0.0f);//动态绘制x坐标
+////    glVertex2f(beginXpoint += 0.1f, 0.0f);
+////    glVertex2f(0.0f,1.0f);//动态绘制y坐标
+////    glVertex2f(0.0f,beginYpoint += 10.0f);
+////    glEnd();
+////
+////    glBegin(GL_LINE_STRIP);
+////    glColor3f(1.0f, 0.0f, 0.0f);
+//
+//
+//
+//
+//}
 
 
 void UGV::to_trans_vec_msg()

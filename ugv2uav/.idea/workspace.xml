@@ -133,7 +133,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../drone_pose" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager" selected="CMake Application.drone_waypoint_publisher">
@@ -761,6 +761,7 @@
       <workItem from="1591758945538" duration="2280000" />
       <workItem from="1591765203251" duration="22740000" />
       <workItem from="1591833274902" duration="34120000" />
+      <workItem from="1591920848206" duration="22479000" />
     </task>
     <servers />
   </component>
@@ -784,13 +785,14 @@
       <screen x="67" y="27" width="2493" height="1413" />
     </state>
     <state x="85" y="171" width="2293" height="1215" key="DiffContextDialog/67.27.2493.1413/2560.0.1080.1920@67.27.2493.1413" timestamp="1591753019403" />
-    <state x="897" y="430" width="524" height="746" key="FileChooserDialogImpl" timestamp="1591749981458">
+    <state x="897" y="430" width="524" height="746" key="FileChooserDialogImpl" timestamp="1591932140474">
       <screen x="67" y="27" width="2493" height="1413" />
     </state>
     <state x="440" y="316" key="FileChooserDialogImpl/1280.0.1920.1080/0.27.1280.997@0.27.1280.997" timestamp="1588375586698" />
     <state x="1940" y="313" width="754" height="484" key="FileChooserDialogImpl/1280.0.1920.1080/0.27.1280.997@1280.0.1920.1080" timestamp="1588252755216" />
     <state x="704" y="332" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1588577062557" />
     <state x="897" y="430" width="524" height="746" key="FileChooserDialogImpl/67.27.2493.1413/2560.0.1080.1920@67.27.2493.1413" timestamp="1591749981458" />
+    <state x="897" y="430" key="FileChooserDialogImpl/67.27.2493.1413/2560.72.1920.1080@67.27.2493.1413" timestamp="1591932140474" />
     <state x="684" y="332" width="530" height="598" key="FileChooserDialogImpl/67.34.1853.1046@67.34.1853.1046" timestamp="1590903280820" />
     <state x="322" y="86" key="SettingsEditor" timestamp="1590757287378">
       <screen x="67" y="34" width="1853" height="1046" />

@@ -50,17 +50,31 @@ public:
     //!world point and uv point to calculate score
     Eigen::Matrix<double,4, 1> WT_s_long,WT_e_long,WT_s_short,WT_e_short;
     cv::Point2d uv_s_long,uv_e_long,uv_s_short,uv_e_short;
-    float weight_long = 1;
-    float weight_short = 1;
+    float weight_long_simple,weight_short_simple;
+    float weight_long_func(float curr_score,float min_score,float max_score );
+    float weight_short_func(float curr_score,float min_score,float max_score);
 
     //! find optimal yaw in FOV
     Eigen::Matrix3d rotation_mtx_yaw_opti;
     Eigen::Isometry3d Trans_mtx_yaw_opti;
     float yaw_opti;
     std::vector<float> yaw_opti_buff;
+
     std::vector<float>::iterator score_it;
+    std::vector<float> score_buff;
+
+    std::pair<float,float> yaw_score;
+    std::vector<std::pair<float,float>> scale_yaw_score_buff;
+
+    std::vector<float> score_long_buff,score_short_buff;
+    std::vector<float>::iterator s_long_max_it, s_short_max_it,s_long_min_it, s_short_min_it;
+    std::pair<float,float> forward_back_score(float &yaw_min, float &yaw_max,Eigen::Matrix<double,4, 1> &WT_s_long_,Eigen::Matrix<double,4, 1> &WT_e_long_);
     float score_max;
     float yaw_of_score_max;
+    std::vector<float> score_max_buff;
+    std::vector<float> yaw_of_score_max_buff;
+    std::vector<float>::iterator score_max_it;
+    std::vector<float>::iterator yaw_of_score_max_it;
 
 
 
@@ -75,6 +89,7 @@ public:
     void esti_yaw_interval(Eigen::Matrix<double,4, 1> &worldTraj_start_, Eigen::Matrix<double,4, 1> &worldTraj_end_);
     void get_Score(float &score,Eigen::Matrix<double,4, 1> &WT_s_long_,Eigen::Matrix<double,4, 1> &WT_e_long_);
     void find_max_Score(float &score,Eigen::Matrix<double,4, 1> &WT_s_long_,Eigen::Matrix<double,4, 1> &WT_e_long_);
+    float score_fun(float &yaw_fun,Eigen::Matrix<double,4, 1> &WT_s_long_,Eigen::Matrix<double,4, 1> &WT_e_long_);
     cv::Point2d get_uv_from_sim_Opti(Eigen::Isometry3d &trans, Eigen::Matrix<double,4, 1> &worldTraj_Point);
 //    ~UGV();
 };

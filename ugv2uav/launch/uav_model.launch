@@ -1,10 +1,10 @@
 <launch>
-    <arg name="uav_name" default="uav"/>
+    <arg name="uav_name" default="uav2"/>
     <arg name="namespace" default="$(arg uav_name)"/>
     <arg name="model_xacro" default="$(find ugv2uav)/model/uav/uav.xacro"/>
-    <arg name="x" default="6"/>
+    <arg name="x" default="2"/>
     <arg name="y" default="0"/>
-    <arg name="z" default="4"/>
+    <arg name="z" default="1"/>
     <arg name="R" default="0"/>
     <arg name="P" default="0"/>
     <arg name="Y" default="0"/>

@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/wzy/catkin_ws/src/ugv2uav/src/Eigen_UGV_Trans.cpp" "/home/wzy/catkin_ws/src/ugv2uav/cmake-build-debug/CMakeFiles/eigen_ugv_trans_node.dir/src/Eigen_UGV_Trans.cpp.o"
   "/home/wzy/catkin_ws/src/ugv2uav/src/UGV.cpp" "/home/wzy/catkin_ws/src/ugv2uav/cmake-build-debug/CMakeFiles/eigen_ugv_trans_node.dir/src/UGV.cpp.o"
+  "/home/wzy/catkin_ws/src/ugv2uav/src/opengl_plot.cpp" "/home/wzy/catkin_ws/src/ugv2uav/cmake-build-debug/CMakeFiles/eigen_ugv_trans_node.dir/src/opengl_plot.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

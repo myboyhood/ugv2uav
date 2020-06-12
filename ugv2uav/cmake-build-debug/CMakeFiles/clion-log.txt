@@ -23,7 +23,6 @@
 -- Detected gflags version: 2.2.1
 -- Found required Ceres dependency: gflags
 -- Found Ceres version: 1.14.0 installed in: /usr/local with components: [EigenSparse, SparseLinearAlgebraLibrary, LAPACK, SuiteSparse, CXSparse, SchurSpecializations, OpenMP, Multithreading]
--- Found GLEW: /usr/include (found version "2.0.0") 
 -- ugv2uav: 1 messages, 0 services
 -- Configuring done
 -- Generating done

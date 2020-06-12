@@ -168,7 +168,7 @@ include_directories(
 add_executable(drone_waypoint_publisher src/drone_waypoint_publisher.cpp )
 add_dependencies(drone_waypoint_publisher ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
-add_executable(eigen_ugv_trans_node src/Eigen_UGV_Trans.cpp src/UGV.cpp )
+add_executable(eigen_ugv_trans_node src/Eigen_UGV_Trans.cpp src/UGV.cpp src/opengl_plot.cpp)
 add_dependencies(eigen_ugv_trans_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
